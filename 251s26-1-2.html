@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Math 251</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Math 251</h1>
+<p class="date">1.2: Integrals as General and Particular Solutions</p>
+</header>
+<section id="some-special-cases-of-first-order-ode" class="frame">
+<h3>Some special cases of first order ODE</h3>
+<p>The most general form of a first-order ODE is <span
+class="math display">$$\frac{dy}{dx} = f(x,y).$$</span> The special case
+(where the independent variable doesn’t appear in the ODE) <span
+class="math display">$$\frac{dy}{dx} = f(y)$$</span> is called
+<em>autonomous</em> — the “law of nature" (the ODE) doesn’t depend on
+the independent variable. For many phenomena, we first consider the
+simpler case with these “static laws of nature" since they’re simpler to
+analyze <a href="#fn1" class="footnote-ref" id="fnref1"
+role="doc-noteref"><sup>1</sup></a>, before considering a refined model
+of the form <span class="math inline">$\frac{dy}{dx} =
+f(x,y).$</span><br />
+</p>
+</section>
+<div class="frame">
+<p>The “opposite" special case would be <span
+class="math display">$$\frac{dy}{dx} = f(x),$$</span> where the
+differential equation doesn’t actually involve the unknown function
+itself.<br />
+While technically still a differential equation, it’s “easy" in the
+sense that it can be solved for <span
+class="math inline"><em>y</em>(<em>x</em>)</span> by simply
+antidifferentiating <span
+class="math inline"><em>f</em>(<em>x</em>)</span>: <span
+class="math display"><em>y</em>(<em>x</em>) = ∫<em>f</em>(<em>x</em>) <em>d</em><em>x</em> + <em>C</em>.</span></p>
+</div>
+<div class="frame">
+<p><strong>Example.</strong> Consider <span
+class="math inline">$\frac{dy}{dx} = e^{2x} + x^2$</span>.</p>
+<ol type="a">
+<li><p>Find the general solution.</p></li>
+<li><p>Find the particular solution satisfying <span
+class="math inline"><em>y</em>(1) = 3</span>.</p></li>
+<li><p>Take a look on Desmos!</p></li>
+</ol>
+</div>
+<div class="frame">
+<p>This “solvable by directly integrating" also works for equations of
+the following forms: <span class="math display">$$\begin{aligned}
+\frac{d^2y}{dx^2} &amp;= f(x) , \\
+\frac{d^3y}{dx^3} &amp;= f(x) , \\
+&amp;\vdots\\
+\frac{d^ny}{dx^n} &amp;= f(x) .
+\end{aligned}$$</span> We obtain one integration constant per derivative
+we undo, and so we obtain an <span
+class="math inline"><em>n</em></span>-parameter family for the <span
+class="math inline"><em>n</em></span>th-order “antiderivative
+equation".</p>
+</div>
+<section id="position-velocity-and-acceleration" class="frame">
+<h3>Position, velocity, and acceleration</h3>
+<p>We consider a particle moving along the <span
+class="math inline"><em>x</em></span>-axis with
+<em>position/displacement</em> given by <span
+class="math display"><em>x</em> = <em>f</em>(<em>t</em>).</span> Its
+<em>velocity</em> is <span class="math display">$$v = \frac{dx}{dt} =
+f'(t),$$</span> and its <em>speed</em> is <span
+class="math inline">|<em>v</em>|</span>. Its <em>acceleration</em> is
+<span class="math display">$$a = \frac{dv}{dt} = \frac{d^2x}{dt^2} =
+f''(t).$$</span> If <span class="math inline"><em>m</em></span> is the
+mass of the particle, Newton’s second law states <span
+class="math display"><em>m</em><em>a</em>(<em>t</em>) = <em>F</em>(<em>t</em>)</span>
+where <span class="math inline"><em>F</em>(<em>t</em>)</span> is the
+force acting on the particle along its line of motion.</p>
+</section>
+<section id="constant-acceleration" class="frame">
+<h3>Constant acceleration</h3>
+<p>In the special case where the acceleration doesn’t depend on time:
+<span class="math display"><em>a</em>(<em>t</em>) = <em>a</em>,</span>
+we can integrate to obtain <span
+class="math display"><em>v</em>(<em>t</em>) = <em>a</em><em>t</em> + <em>v</em><sub>0</sub></span>
+where <span
+class="math inline"><em>v</em><sub>0</sub> = <em>v</em>(0)</span> is the
+<em>initial velocity</em>. We can integrate again to obtain <span
+class="math display">$$x(t) = \frac 1 2 a t^2 + v_0t + x_0,$$</span>
+where <span
+class="math inline"><em>x</em><sub>0</sub> = <em>x</em>(0)</span> is the
+<em>initial position</em>.</p>
+</section>
+<section id="we-can-already-do-some-rocket-science..." class="frame">
+<h3>We can already do some rocket science...</h3>
+<p>A lunar lander is falling freely toward the surface of the moon at a
+speed of 450 m/s.<br />
+Its thrusters cause the lander to decelerate at 2.5 m/s<span
+class="math inline"><sup>2</sup></span> (after the moon’s gravitational
+acceleration is accounted for).<br />
+At what height above the surface should the thrusters be activated to
+ensure a “soft touchdown" (<span
+class="math inline"><em>v</em> = 0</span> on impact)?</p>
+</section>
+<section id="units" class="frame">
+<h3>Units</h3>
+<p><img src="units.png" alt="image" /><br />
+The <em>weight</em> of an object is the force exerted by gravity on the
+object, so at sea level on Earth is <span
+class="math inline"><em>m</em><em>g</em></span>.</p>
+</section>
+<div class="frame">
+<p><strong>Example.</strong> A projectile is fired straight upward with
+an initial velocity of 100 m/s from the top of a building 20 m high and
+falls to the ground at the base of the building. Find</p>
+<ol type="a">
+<li><p>its maximum height above the ground</p></li>
+<li><p>when it passes the top of the building</p></li>
+<li><p>its total time in the air</p></li>
+</ol>
+</div>
+<section id="footnotes" class="footnotes footnotes-end-of-document"
+role="doc-endnotes">
+<hr />
+<ol>
+<li id="fn1"><p>We’ll completely understand the qualitative behavior of
+any first order autonomous ODE in section 2.2.<a href="#fnref1"
+class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section>
+</body>
+</html>
