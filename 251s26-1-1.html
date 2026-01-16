@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>Math 251</title>
+  <style>
+    html {
+      color: #1a1a1a;
+      background-color: #fdfdfd;
+    }
+    body {
+      margin: 0 auto;
+      max-width: 36em;
+      padding-left: 50px;
+      padding-right: 50px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+      hyphens: auto;
+      overflow-wrap: break-word;
+      text-rendering: optimizeLegibility;
+      font-kerning: normal;
+    }
+    @media (max-width: 600px) {
+      body {
+        font-size: 0.9em;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 1.8em;
+      }
+    }
+    @media print {
+      html {
+        background-color: white;
+      }
+      body {
+        background-color: transparent;
+        color: black;
+        font-size: 12pt;
+      }
+      p, h2, h3 {
+        orphans: 3;
+        widows: 3;
+      }
+      h2, h3, h4 {
+        page-break-after: avoid;
+      }
+    }
+    p {
+      margin: 1em 0;
+    }
+    a {
+      color: #1a1a1a;
+    }
+    a:visited {
+      color: #1a1a1a;
+    }
+    img {
+      max-width: 100%;
+    }
+    svg {
+      height: auto;
+      max-width: 100%;
+    }
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 1.4em;
+    }
+    h5, h6 {
+      font-size: 1em;
+      font-style: italic;
+    }
+    h6 {
+      font-weight: normal;
+    }
+    ol, ul {
+      padding-left: 1.7em;
+      margin-top: 1em;
+    }
+    li > ol, li > ul {
+      margin-top: 0;
+    }
+    blockquote {
+      margin: 1em 0 1em 1.7em;
+      padding-left: 1em;
+      border-left: 2px solid #e6e6e6;
+      color: #606060;
+    }
+    code {
+      font-family: Menlo, Monaco, Consolas, 'Lucida Console', monospace;
+      font-size: 85%;
+      margin: 0;
+      hyphens: manual;
+    }
+    pre {
+      margin: 1em 0;
+      overflow: auto;
+    }
+    pre code {
+      padding: 0;
+      overflow: visible;
+      overflow-wrap: normal;
+    }
+    .sourceCode {
+     background-color: transparent;
+     overflow: visible;
+    }
+    hr {
+      border: none;
+      border-top: 1px solid #1a1a1a;
+      height: 1px;
+      margin: 1em 0;
+    }
+    table {
+      margin: 1em 0;
+      border-collapse: collapse;
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+      font-variant-numeric: lining-nums tabular-nums;
+    }
+    table caption {
+      margin-bottom: 0.75em;
+    }
+    tbody {
+      margin-top: 0.5em;
+      border-top: 1px solid #1a1a1a;
+      border-bottom: 1px solid #1a1a1a;
+    }
+    th {
+      border-top: 1px solid #1a1a1a;
+      padding: 0.25em 0.5em 0.25em 0.5em;
+    }
+    td {
+      padding: 0.125em 0.5em 0.25em 0.5em;
+    }
+    header {
+      margin-bottom: 4em;
+      text-align: center;
+    }
+    #TOC li {
+      list-style: none;
+    }
+    #TOC ul {
+      padding-left: 1.3em;
+    }
+    #TOC > ul {
+      padding-left: 0;
+    }
+    #TOC a:not(:hover) {
+      text-decoration: none;
+    }
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  
+  <script>
+MathJax = {
+  tex: {
+    inlineMath: {'[+]': [['$', '$']]}
+  }
+};
+</script>
+<script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
+
+  
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">Math 251</h1>
+<p class="date">1.1: Differential Equations and Mathematical Models</p>
+</header>
+<div class="frame">
+<p>Most interesting natural phenomena involve change, and the laws
+governing these phenomena are written in mathematical equations relating
+changing quantities.<br />
+An equation relating an unknown function and one or more of its
+derivatives is called a <em>differential equation</em>.</p>
+</div>
+<section id="examples-of-differential-equations" class="frame">
+<h3>Examples of differential equations</h3>
+<ul>
+<li>The DE <span class="math display">$$\frac{dy}{dx} = y^2 +
+x^2$$</span> involves the unknown function <span
+class="math inline"><em>y</em>(<em>x</em>)</span> and its derivative
+<span class="math inline">$y'(x)=\frac{dy}{dx}$</span>.</li>
+</ul>
+</section>
+<section id="examples-of-differential-equations-1" class="frame">
+<h3>Examples of differential equations</h3>
+<ul>
+<li>The DE <span class="math display">$$m\frac{d^2y}{dt^2} + b
+\frac{dy}{dt} + ky = 0$$</span> involves the unknown function <span
+class="math inline"><em>y</em>(<em>t</em>)</span> and its first and
+second derivatives <span
+class="math inline"><em>y</em>′(<em>t</em>)</span> and <span
+class="math inline"><em>y</em>″(<em>t</em>)</span>.</li>
+</ul>
+</section>
+<section id="examples-of-differential-equations-2" class="frame">
+<h3>Examples of differential equations</h3>
+<ul>
+<li>The DE <span class="math display">$$\frac{\partial u}{\partial t } =
+k \frac{\partial^2 u}{\partial x^2}$$</span> involves the unknown
+function <span
+class="math inline"><em>u</em>(<em>x</em>, <em>t</em>)</span> and its
+<em>partial derivatives</em> <span class="math inline">$\frac{\partial
+u}{\partial t}$</span> and <span class="math inline">$\frac{\partial^2
+u}{\partial x^2}.$</span></li>
+</ul>
+</section>
+<section id="some-vocabulary" class="frame">
+<h3>Some vocabulary</h3>
+<p>The <em>order</em> is the order of the highest derivative appearing
+in the equation. An <span class="math inline"><em>n</em></span>th order
+ODE for <span class="math inline"><em>y</em>(<em>x</em>)</span> takes
+the form <span
+class="math inline"><em>F</em>(<em>x</em>, <em>y</em>, <em>y</em>′, <em>y</em>″, ..., <em>y</em><sup>(<em>n</em>)</sup>) = 0.</span><br />
+An <em>ordinary differential equation</em> (ODE) involves an unknown
+function of <em>one</em> input/independent variable.<br />
+A <em>partial differential equation</em> (PDE) involves an unknown
+function of <em>multiple</em> inputs/independent variables.<br />
+We’ll study ODE for most of the course, and then use Fourier series to
+solve two PDE towards the end (the heat equation and wave equation).</p>
+</section>
+<div class="frame">
+<p>An <em>autonomous</em> ordinary differential equation has no explicit
+dependence on the independent variable. The “laws of nature” (the DE)
+are static in “time" (the input we often have in mind for ODE).<br />
+A differential equation will often have <em>physical constants/ physical
+parameters</em> in addition to the independent and dependent variables —
+we will discuss how useful units are in helping is formulate models!</p>
+</div>
+<section id="checkingverifying-solutions" class="frame">
+<h3>Checking/verifying solutions</h3>
+<p>There is a difference between <em>checking</em> or <em>verifying</em>
+whether an equation is satisfied versus <em>solving</em> it.</p>
+<p>To check/verify whether <span
+class="math inline"><em>x</em> = 3</span> is a solution of <span
+class="math inline">2<em>x</em> + 5 = 11</span>, we substitute to see:
+<span class="math display">$$2(3) + 5 \overset{?}{=} 11, \qquad 11
+\overset{\checkmark}{=} 11.$$</span> Solving would be doing <span
+class="math display">$$\begin{aligned}
+2x+5 &amp;= 11, \\
+2x &amp;= 6, \\
+x &amp;= 3.
+\end{aligned}$$</span></p>
+</section>
+<section id="some-more-vocab" class="frame">
+<h3>Some more vocab</h3>
+<p><strong>Example.</strong> Verify that <span
+class="math inline"><em>y</em>(<em>x</em>) = <em>C</em><em>e</em><sup><em>x</em><sup>2</sup></sup></span>
+<em>satisfies</em>/ <em>solves</em> the DE <span
+class="math display">$$\frac{dy}{dx} = 2xy$$</span> for any constant
+<span class="math inline"><em>C</em></span>.<br />
+We say that, for example, <span
+class="math inline"><em>y</em>(<em>x</em>) = 5<em>e</em><sup><em>x</em><sup>2</sup></sup></span>
+is a <em>particular solution</em> while <span
+class="math inline"><em>y</em>(<em>x</em>) = <em>C</em><em>e</em><sup><em>x</em><sup>2</sup></sup></span>
+is the <em>general solution</em>. The <em>general solution</em> will
+contain <em>integration constant(s)</em>.</p>
+</section>
+<div class="frame">
+<p>We’ll spend most of this course studying ordinary differential
+equations and systems of ordinary differential equations. We’ll study
+various calculus, algebraic, linear algebra, and “<em>complex</em>
+continuous frequency analysis" (Laplace transform) techniques,
+oftentimes learning several ways to solve certain equations.<br />
+When we study the heat and wave PDE towards the end, we’ll be using
+a”discrete frequency analysis" technique (Fourier series).</p>
+</div>
+<section id="basic-goals-of-applied-math" class="frame">
+<h3>Basic goals of applied math</h3>
+<ol type="1">
+<li><p>Discover the differential equation that describes a specified
+physical situation.</p></li>
+<li><p>Find the appropriate solution of that equation (either exactly or
+approximately).</p></li>
+<li><p>Interpret the solution in the applied context.</p></li>
+</ol>
+</section>
+<div class="frame">
+<p><img src="modeling.png" alt="image" /> (Figure 1.1.4 from the
+textbook)</p>
+</div>
+<section id="newtons-law-of-cooling" class="frame">
+<h3>Newton’s law of cooling</h3>
+<p>A small object with variable temperature <span
+class="math inline"><em>T</em>(<em>t</em>)</span> (as a function of time
+<span class="math inline"><em>t</em></span>) sits inside a large
+surrounding medium maintained at a constant temperature <span
+class="math inline"><em>A</em></span>. The rate of change of <span
+class="math inline"><em>T</em>(<em>t</em>)</span> is proportional to the
+temperature difference between the object and the surrounding medium.
+That is, <span class="math display">$$\frac{dT}{dt} = k (A- T)$$</span>
+for some constant <span
+class="math inline"><em>k</em> &gt; 0</span>.</p>
+</section>
+<section id="simple-population-growthdecay" class="frame">
+<h3>Simple population growth/decay</h3>
+<p>The time rate of change of <span
+class="math inline"><em>P</em>(<em>t</em>)</span>, the population at
+time <span class="math inline"><em>t</em></span>, is proportional to the
+population: <span class="math display">$$\frac{dP}{dt} = kP$$</span> for
+some constant <span class="math inline"><em>k</em></span>. It turns out
+the general solution is given by <span
+class="math display"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>k</em><em>t</em></sup>,</span>
+which you can easily verify.</p>
+</section>
+<div class="frame">
+<p><strong>Example.</strong> Knowing that the general solution is <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>k</em><em>t</em></sup></span>,
+suppose that the population took one hour to double from its <em>initial
+value</em> (at <span class="math inline"><em>t</em> = 0</span>) <span
+class="math inline"><em>P</em>(0) = 1000.</span> Find the <em>particular
+solution</em> in this case.</p>
+</div>
+<section id="more-vocabulary" class="frame">
+<h3>More vocabulary</h3>
+<p><img src="popcurves.png" alt="image" /><br />
+This <em>general solution</em> to a <em>first order ODE</em> <span
+class="math inline">$\dfrac{dP}{dt} = (\ln 2)P$</span> is a
+<em>one-parameter family of functions</em> <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>t</em>ln 2</sup></span>
+indexed by <span class="math inline"><em>C</em></span>.</p>
+</section>
+<section id="more-vocabulary-1" class="frame">
+<h3>More vocabulary</h3>
+<p>A DE “typically" has infinitely many solutions; an <em>initial value
+problem</em>”typically" has one <em>particular solution</em>. An
+<em>initial value problem</em> consists of a DE along with initial
+condition(s).</p>
+</section>
+<section id="different-rates-of-change" class="frame">
+<h3>Different “rates of change"</h3>
+<p>Instead of the “standard" time rate of change <span
+class="math inline"><em>P</em>′(<em>t</em>)</span>, we could consider
+the <em>relative rate of change</em> (that is, normalized by population)
+: <span class="math display">$$\frac{P'(t)}{P(t)} = \frac 1 P
+\frac{dP}{dt}.$$</span></p>
+</section>
+<section id="logistic-population-model" class="frame">
+<h3>Logistic population model</h3>
+<p>Let <span class="math inline"><em>M</em> &gt; 0</span> represent the
+<em>carrying capacity</em>. The <em>relative rate of change</em> of
+<span class="math inline"><em>P</em>(<em>t</em>)</span>, the population
+at time <span class="math inline"><em>t</em></span>, is proportional to
+the “available space": <span class="math display">$$\frac{1}{P}
+\frac{dP}{dt} = k(M-P) \qquad \mbox{ and so } \frac{dP}{dt} =
+kP(M-P)$$</span> for some constant <span
+class="math inline"><em>k</em> &gt; 0</span>.</p>
+</section>
+<div class="frame">
+<p><strong>Example.</strong> A function <span
+class="math inline"><em>y</em> = <em>g</em>(<em>x</em>)</span> is
+described by some geometric property of its graph. Write a differential
+equation of the form <span class="math inline">$\frac{dy}{dx} =
+f(x,y)$</span> having the function <span
+class="math inline"><em>g</em></span> as a solution.</p>
+<ul>
+<li><p>The slope of the graph of <span
+class="math inline"><em>g</em></span> at <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> is the sum of <span
+class="math inline"><em>x</em></span> and <span
+class="math inline"><em>y</em></span>.</p></li>
+<li><p>The line tangent to the graph of <span
+class="math inline"><em>g</em></span> at the point <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> intersects the <span
+class="math inline"><em>x</em></span>-axis at the point <span
+class="math inline">(<em>x</em>/2, 0)</span>.</p></li>
+<li><p>Every straight line normal to the graph of <span
+class="math inline"><em>g</em></span> passes through the point <span
+class="math inline">(0, 1)</span>.</p></li>
+</ul>
+</div>
+<div class="frame">
+<p><strong>Example.</strong> Show that the <em>two-parameter family of
+functions</em> <span
+class="math inline"><em>y</em>(<em>x</em>) = <em>A</em>cos (3<em>x</em>) + <em>B</em>sin (3<em>x</em>)</span>
+indexed by <span class="math inline"><em>A</em>, <em>B</em></span>
+solves the ODE <span
+class="math inline"><em>y</em>″ + 9<em>y</em> = 0.</span></p>
+</div>
+<section id="some-more-vocabulary" class="frame">
+<h3>Some more vocabulary</h3>
+<p>The <em>normal form</em> of an <span
+class="math inline"><em>n</em></span>th order ODE is <span
+class="math display"><em>y</em><sup>(<em>n</em>)</sup> = <em>G</em>(<em>x</em>, <em>y</em>, <em>y</em>′, ..., <em>y</em><sup>(<em>n</em> − 1)</sup>).</span>
+Typically, the general solution will be an <span
+class="math inline"><em>n</em></span>-parameter family of solutions,
+indexed by <span class="math inline"><em>n</em></span> “integration
+constants".</p>
+</section>
+<section id="big-course-goal" class="frame">
+<h3>Big course goal</h3>
+<p>Given an initial value problem, how do we <em>solve</em> or
+<em>find</em> the particular solution “from scratch"? We haven’t done
+ANY of that yet! In Chapter 1, we’ll learn</p>
+<ul>
+<li><p>1.4: Separation of variables for first order separable
+equations</p></li>
+<li><p>1.5: Integrating factors for first order linear
+equations</p></li>
+</ul>
+<p>and see the vast array of applications these techniques are useful
+for.</p>
+</section>
+</body>
+</html>
