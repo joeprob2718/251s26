@@ -176,7 +176,6 @@ MathJax = {
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
-
   
 </head>
 <body>
@@ -194,35 +193,90 @@ derivatives is called a <em>differential equation</em>.</p>
 <section id="examples-of-differential-equations" class="frame">
 <h3>Examples of differential equations</h3>
 <ul>
-<li>The DE <span class="math display">$$\frac{dy}{dx} = y^2 +
+<li><p>The DE <span class="math display">$$\frac{dy}{dx} = y^2 +
 x^2$$</span> involves the unknown function <span
 class="math inline"><em>y</em>(<em>x</em>)</span> and its derivative
-<span class="math inline">$y'(x)=\frac{dy}{dx}$</span>.</li>
+<span class="math inline">$y'(x)=\frac{dy}{dx}$</span>.</p></li>
 </ul>
 </section>
 <section id="examples-of-differential-equations-1" class="frame">
 <h3>Examples of differential equations</h3>
 <ul>
-<li>The DE <span class="math display">$$m\frac{d^2y}{dt^2} + b
+<li><p>The DE <span class="math display">$$m\frac{d^2y}{dt^2} + b
 \frac{dy}{dt} + ky = 0$$</span> involves the unknown function <span
 class="math inline"><em>y</em>(<em>t</em>)</span> and its first and
 second derivatives <span
 class="math inline"><em>y</em>′(<em>t</em>)</span> and <span
-class="math inline"><em>y</em>″(<em>t</em>)</span>.</li>
+class="math inline"><em>y</em>″(<em>t</em>)</span>.</p></li>
 </ul>
 </section>
+<section id="annotations-from-class" class="frame">
+<h3>Annotations from class</h3>
+<p>This is the equation for a mass-spring-dashpot system, which is one
+type of <em>damped linear oscillator</em>. It is also the same equation
+as an LRC-circuit.<br />
+Here, <span class="math inline"><em>y</em>(<em>t</em>)</span> is the
+displacement (from equilibrium) of a mass <span
+class="math inline"><em>m</em></span> attached to a spring. A spring has
+an equilibrium position (corresponds to it’s “preferred length"). If
+<span class="math inline"><em>y</em> &gt; 0</span> then the spring is
+stretched, and if <span class="math inline"><em>y</em> &lt; 0</span> the
+spring is compressed. You may recall from Physics 211 that a linear
+spring satisfies Hooke’s law, meaning the restoring force is
+proportional to the displacement from equilibrium, and the constant of
+proportionality <span class="math inline"><em>k</em></span> is called
+the <em>spring constant</em>, which measures the “stiffness" of the
+spring.<br />
+We also have a dashpot/shock absorber attached to the mass that provides
+a resistive (friction) force, and the dashpot has <em>damping
+constant</em> <span class="math inline"><em>b</em></span>.</p>
+</section>
+<div class="frame">
+<p>We’ll study this equation in detail in section 3.4, and will consider
+the equation with a sinusoidal driving force in 3.6. In 3.6, we’ll
+explore the concept of <em>resonance</em>, which is when there are large
+amplitude oscillations for certain driving frequencies.</p>
+</div>
 <section id="examples-of-differential-equations-2" class="frame">
 <h3>Examples of differential equations</h3>
 <ul>
-<li>The DE <span class="math display">$$\frac{\partial u}{\partial t } =
-k \frac{\partial^2 u}{\partial x^2}$$</span> involves the unknown
+<li><p>The DE <span class="math display">$$\frac{\partial u}{\partial t
+} = k \frac{\partial^2 u}{\partial x^2}$$</span> involves the unknown
 function <span
 class="math inline"><em>u</em>(<em>x</em>, <em>t</em>)</span> and its
 <em>partial derivatives</em> <span class="math inline">$\frac{\partial
 u}{\partial t}$</span> and <span class="math inline">$\frac{\partial^2
-u}{\partial x^2}.$</span></li>
+u}{\partial x^2}.$</span></p></li>
 </ul>
 </section>
+<section id="annotations-from-class-1" class="frame">
+<h3>Annotations from class</h3>
+<p>This is the heat/diffusion equation, and models heat transfer via
+conduction along a thin 1-dimensional rod occupying <span
+class="math inline">0 ≤ <em>x</em> ≤ <em>L</em></span>. Here, the
+unknown function <span
+class="math inline"><em>u</em>(<em>x</em>, <em>t</em>)</span> is the
+temperature at position <span class="math inline"><em>x</em></span> and
+time <span class="math inline"><em>t</em></span> along the rod. <span
+class="math inline"><em>k</em></span> is the <em>thermal
+diffusivity</em> of the rod, and depends on what it is made of. For
+example, copper has a higher thermal diffusivity than steel, which is
+why expensive multiply stainless steel cookware has layer(s) of copper
+in between the steel so that it heats more evenly more quickly.<br />
+When considering functions of multiple independent variables, we
+consider partial derivatives and use the partial derivative notation
+with “curly d" to emphasize there are other independent variable(s)
+being held constant. In this case for example, <span
+class="math inline">$\frac{\partial u}{\partial t}$</span> is the
+partial derivative of temperature with respect to time, while the
+position <span class="math inline"><em>x</em></span> is held
+constant.<br />
+</p>
+</section>
+<div class="frame">
+<p>We’ll study the heat equation in Chapter 9 (along with the wave
+equation) using Fourier series.</p>
+</div>
 <section id="some-vocabulary" class="frame">
 <h3>Some vocabulary</h3>
 <p>The <em>order</em> is the order of the highest derivative appearing
@@ -237,6 +291,16 @@ function of <em>multiple</em> inputs/independent variables.<br />
 We’ll study ODE for most of the course, and then use Fourier series to
 solve two PDE towards the end (the heat equation and wave equation).</p>
 </section>
+<section id="annotations-from-class-2" class="frame">
+<h3>Annotations from class</h3>
+<p>The earlier example <span class="math inline">$\frac{dy}{dx} = y^2
++x^2$</span> is first order ODE.<br />
+The DE <span
+class="math inline"><em>m</em><em>y</em>″ + <em>b</em><em>y</em>′ + <em>k</em><em>y</em> = 0</span>
+is a second order ODE.<br />
+The DE <span class="math inline">$\frac{\partial u}{\partial t} = k
+\frac{\partial^2 u}{\partial x^2}$</span> is a second order PDE.</p>
+</section>
 <div class="frame">
 <p>An <em>autonomous</em> ordinary differential equation has no explicit
 dependence on the independent variable. The “laws of nature” (the DE)
@@ -245,20 +309,33 @@ A differential equation will often have <em>physical constants/ physical
 parameters</em> in addition to the independent and dependent variables —
 we will discuss how useful units are in helping is formulate models!</p>
 </div>
+<section id="annotations-from-class-3" class="frame">
+<h3>Annotations from class</h3>
+<p>The earlier example <span class="math inline">$\frac{dy}{dx} = y^2
++x^2$</span> is not autonomous, since the independent variable <span
+class="math inline"><em>x</em></span> appears in the equation. There
+aren’t any parameters in this equation.<br />
+The DE <span
+class="math inline"><em>m</em><em>y</em>″ + <em>b</em><em>y</em>′ + <em>k</em><em>y</em> = 0</span>
+is autonomous, since the independent variable <span
+class="math inline"><em>t</em></span> does not appear in the equation.
+The parameters are the physical constants <span
+class="math inline"><em>m</em>, <em>b</em>, <em>k</em></span>.</p>
+</section>
 <section id="checkingverifying-solutions" class="frame">
 <h3>Checking/verifying solutions</h3>
 <p>There is a difference between <em>checking</em> or <em>verifying</em>
-whether an equation is satisfied versus <em>solving</em> it.</p>
-<p>To check/verify whether <span
-class="math inline"><em>x</em> = 3</span> is a solution of <span
-class="math inline">2<em>x</em> + 5 = 11</span>, we substitute to see:
-<span class="math display">$$2(3) + 5 \overset{?}{=} 11, \qquad 11
-\overset{\checkmark}{=} 11.$$</span> Solving would be doing <span
-class="math display">$$\begin{aligned}
+whether an equation is satisfied versus <em>solving</em> it.<br />
+To check/verify whether <span class="math inline"><em>x</em> = 3</span>
+is a solution of <span class="math inline">2<em>x</em> + 5 = 11</span>,
+we substitute to see: <span class="math display">$$2(3) + 5
+\overset{?}{=} 11, \qquad 11 \overset{\checkmark}{=} 11.$$</span>
+Solving would be doing <span class="math display">$$\begin{aligned}
 2x+5 &amp;= 11, \\
 2x &amp;= 6, \\
 x &amp;= 3.
-\end{aligned}$$</span></p>
+\end{aligned}$$</span> “Solving" typically means a systematic way to
+“undo" the equation and obtain the solution “from scratch".</p>
 </section>
 <section id="some-more-vocab" class="frame">
 <h3>Some more vocab</h3>
@@ -274,18 +351,40 @@ class="math inline"><em>y</em>(<em>x</em>) = <em>C</em><em>e</em><sup><em>x<
 is the <em>general solution</em>. The <em>general solution</em> will
 contain <em>integration constant(s)</em>.</p>
 </section>
+<section id="annotations-from-class-4" class="frame">
+<h3>Annotations from class</h3>
+<p>For <span class="math inline"><em>y</em>(<em>x</em>)</span> to be a
+solution of a DE, it must satisfy the DE for either all <span
+class="math inline"><em>x</em></span>, or at least for all <span
+class="math inline"><em>x</em></span> in some interval. (That is, only
+working for discrete values such as <span
+class="math inline"><em>x</em> = 0</span> and <span
+class="math inline"><em>x</em> = 7</span> would not be enough to make it
+a solution.)<br />
+Here, if <span
+class="math inline"><em>y</em>(<em>x</em>) = <em>C</em><em>e</em><sup><em>x</em><sup>2</sup></sup></span>
+we can compute <span class="math inline">$\frac{dy}{dx} = Ce^{x^2} \cdot
+2x$</span>. Substituting into the DE yields <span
+class="math display">$$Ce^{x^2} \cdot 2x \overset{?}{=} 2x \cdot
+Ce^{x^2}, \qquad 2Cxe^{x^2} \overset{\checkmark}{=} 2Cxe^{x^2}$$</span>
+is true for all <span class="math inline"><em>x</em></span>, and so
+<span
+class="math inline"><em>y</em>(<em>x</em>) = <em>C</em><em>e</em><sup><em>x</em><sup>2</sup></sup></span>
+solves the ODE for any value of the constant <span
+class="math inline"><em>C</em></span>.</p>
+</section>
 <div class="frame">
 <p>We’ll spend most of this course studying ordinary differential
 equations and systems of ordinary differential equations. We’ll study
 various calculus, algebraic, linear algebra, and “<em>complex</em>
 continuous frequency analysis" (Laplace transform) techniques,
 oftentimes learning several ways to solve certain equations.<br />
-When we study the heat and wave PDE towards the end, we’ll be using
-a”discrete frequency analysis" technique (Fourier series).</p>
+When we study the heat and wave PDE towards the end, we’ll be using a
+“discrete frequency analysis" technique (Fourier series).</p>
 </div>
 <section id="basic-goals-of-applied-math" class="frame">
 <h3>Basic goals of applied math</h3>
-<ol type="1">
+<ol>
 <li><p>Discover the differential equation that describes a specified
 physical situation.</p></li>
 <li><p>Find the appropriate solution of that equation (either exactly or
@@ -310,6 +409,36 @@ That is, <span class="math display">$$\frac{dT}{dt} = k (A- T)$$</span>
 for some constant <span
 class="math inline"><em>k</em> &gt; 0</span>.</p>
 </section>
+<section id="annotations-from-class-5" class="frame">
+<h3>Annotations from class</h3>
+<p>Notice how the ODE/law of nature is described in words — “the rate of
+change of temperature is proportional to the temperature difference".
+Remember, we say <span class="math inline"><em>y</em></span> is
+proportional to <span class="math inline"><em>x</em></span> when <span
+class="math inline"><em>y</em> = <em>k</em><em>x</em></span> for some
+constant of proportionality <span class="math inline"><em>k</em></span>.
+The temperature difference in this case is <span
+class="math inline"><em>A</em> − <em>T</em></span> or <span
+class="math inline"><em>T</em> − <em>A</em></span>, and if we want <span
+class="math inline"><em>k</em> &gt; 0</span> we have <span
+class="math inline">$\dfrac{dT}{dt} = k(A-T).$</span></p>
+</section>
+<section id="annotations-from-class-6" class="frame">
+<h3>Annotations from class</h3>
+<p>Note that the equation as written is consistent with what we expect —
+if the object is colder than the surroundings (so that <span
+class="math inline"><em>T</em> &lt; <em>A</em></span>), then <span
+class="math inline"><em>A</em> − <em>T</em> &gt; 0</span> and the ODE
+states that <span class="math inline">$\dfrac{dT}{dt} &gt; 0$</span> as
+expected. (Remember from Calc 1, when <span
+class="math inline">$\dfrac{dT}{dt} &gt; 0$</span> we have the
+temperature <span class="math inline"><em>T</em>(<em>t</em>)</span> is
+increasing, and we expect colder objects to heat up).<br />
+We could write the equivalent model <span
+class="math display">$$\dfrac{dT}{dt} = k(T-A), \qquad k&lt;0,$$</span>
+but whenever possible we try to make our parameters positive and include
+explicit minus signs as a reminder of the sign.</p>
+</section>
 <section id="simple-population-growthdecay" class="frame">
 <h3>Simple population growth/decay</h3>
 <p>The time rate of change of <span
@@ -329,6 +458,19 @@ value</em> (at <span class="math inline"><em>t</em> = 0</span>) <span
 class="math inline"><em>P</em>(0) = 1000.</span> Find the <em>particular
 solution</em> in this case.</p>
 </div>
+<section id="annotations-from-class-7" class="frame">
+<h3>Annotations from class</h3>
+<p>In 1.4 and 1.5 we’ll learn the steps to obtain <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>k</em><em>t</em></sup></span>
+from the ODE <span class="math inline">$\dfrac{dP}{dt} = kP,$</span> but
+for now notice that we can check: <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>k</em><em>t</em></sup></span>
+means <span
+class="math inline"><em>P</em>′(<em>t</em>) = <em>e</em><sup><em>k</em><em>t</em></sup> ⋅ <em>k</em></span>
+by the chain rule, and so we see in fact <span
+class="math inline"><em>P</em>′(<em>t</em>) = <em>k</em><em>P</em>(<em>t</em>)</span>
+is satisfied.</p>
+</section>
 <section id="more-vocabulary" class="frame">
 <h3>More vocabulary</h3>
 <p><img src="popcurves.png" alt="image" /><br />
@@ -338,12 +480,38 @@ class="math inline">$\dfrac{dP}{dt} = (\ln 2)P$</span> is a
 class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>t</em>ln 2</sup></span>
 indexed by <span class="math inline"><em>C</em></span>.</p>
 </section>
+<section id="annotations-from-class-8" class="frame">
+<h3>Annotations from class</h3>
+<p>Substituting <span class="math inline"><em>P</em>(0) = 1000</span>
+into <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>k</em><em>t</em></sup>,</span>
+we obtain <span
+class="math inline">1000 = <em>C</em><em>e</em><sup><em>k</em> ⋅ 0</sup> = <em>C</em><em>e</em><sup>0</sup> = <em>C</em>,</span>
+and so <span
+class="math inline"><em>P</em>(<em>t</em>) = 1000<em>e</em><sup><em>k</em><em>t</em></sup></span>.<br />
+Then, <span class="math inline"><em>P</em>(1) = 2000</span> yields <span
+class="math inline">2000 = 1000<em>e</em><sup><em>k</em> ⋅ 1</sup> ⟹ 2 = <em>e</em><sup><em>k</em></sup> ⟹ <em>k</em> = ln (2),</span>
+and so <span
+class="math display"><em>P</em>(<em>t</em>) = 1000<em>e</em><sup><em>t</em>ln (2)</sup></span>
+is the particular solution in this case.</p>
+</section>
 <section id="more-vocabulary-1" class="frame">
 <h3>More vocabulary</h3>
 <p>A DE “typically" has infinitely many solutions; an <em>initial value
-problem</em>”typically" has one <em>particular solution</em>. An
+problem</em> “typically" has one <em>particular solution</em>. An
 <em>initial value problem</em> consists of a DE along with initial
 condition(s).</p>
+</section>
+<section id="annotations-from-class-9" class="frame">
+<h3>Annotations from class</h3>
+<p>For example, the DE <span class="math inline">$\dfrac{dP}{dt} = (\ln
+2)P$</span> has infinitely many solutions given by <span
+class="math inline"><em>P</em>(<em>t</em>) = <em>C</em><em>e</em><sup><em>t</em>ln 2</sup></span>
+for any constant <span class="math inline"><em>C</em></span>.<br />
+On the other hand, the initial value problem <span
+class="math inline">$\dfrac{dP}{dt} = (\ln 2)P, \quad P(0) =
+1000$</span> only has one solution <span
+class="math inline"><em>P</em>(<em>t</em>) = 1000<em>e</em><sup><em>t</em>ln 2</sup>.</span></p>
 </section>
 <section id="different-rates-of-change" class="frame">
 <h3>Different “rates of change"</h3>
@@ -352,6 +520,18 @@ class="math inline"><em>P</em>′(<em>t</em>)</span>, we could consider
 the <em>relative rate of change</em> (that is, normalized by population)
 : <span class="math display">$$\frac{P'(t)}{P(t)} = \frac 1 P
 \frac{dP}{dt}.$$</span></p>
+</section>
+<section id="annotations-from-class-10" class="frame">
+<h3>Annotations from class</h3>
+<p>This could be called the “fractional rate of change", and if we
+multiplied by 100 we’d call this the percent rate of change.<br />
+The simple population model is that the relative rate of change of
+population is constant, since this sentence translates to <span
+class="math display">$$\dfrac{1}{P} \dfrac{dP}{dt} = k \iff
+\dfrac{dP}{dt} = kP.$$</span> This is another way to phrase the same
+model, earlier we said the rate of change of population <span
+class="math inline">$\dfrac{dP}{dt}$</span> was proportional to
+population.</p>
 </section>
 <section id="logistic-population-model" class="frame">
 <h3>Logistic population model</h3>
@@ -364,6 +544,20 @@ the “available space": <span class="math display">$$\frac{1}{P}
 kP(M-P)$$</span> for some constant <span
 class="math inline"><em>k</em> &gt; 0</span>.</p>
 </section>
+<section id="annotations-from-class-11" class="frame">
+<h3>Annotations from class</h3>
+<p>The motivation for this “refined model" is that our original simple
+population model predicted the population grows without bound — the
+example considered earlier <span
+class="math inline"><em>P</em>(<em>t</em>) = 1000<em>e</em><sup><em>t</em>ln 2</sup></span>
+satisfied <span class="math inline">$\lim_{t \to \infty} \frac{dP}{dt} =
+\infty$</span>. We know this isn’t realistic in the real world —
+eventually the habit will run out of space or resources and populations
+cannot increase without bound forever. We’ll see in sections 1.3, 1.4,
+2.1 that this logistic model predicts <span
+class="math inline">lim<sub><em>t</em> → ∞</sub><em>P</em>(<em>t</em>) = <em>M</em></span>
+provided <span class="math inline"><em>P</em>(0) &gt; 0</span>.</p>
+</section>
 <div class="frame">
 <p><strong>Example.</strong> A function <span
 class="math inline"><em>y</em> = <em>g</em>(<em>x</em>)</span> is
@@ -371,7 +565,7 @@ described by some geometric property of its graph. Write a differential
 equation of the form <span class="math inline">$\frac{dy}{dx} =
 f(x,y)$</span> having the function <span
 class="math inline"><em>g</em></span> as a solution.</p>
-<ul>
+<ol>
 <li><p>The slope of the graph of <span
 class="math inline"><em>g</em></span> at <span
 class="math inline">(<em>x</em>, <em>y</em>)</span> is the sum of <span
@@ -385,8 +579,40 @@ class="math inline">(<em>x</em>/2, 0)</span>.</p></li>
 <li><p>Every straight line normal to the graph of <span
 class="math inline"><em>g</em></span> passes through the point <span
 class="math inline">(0, 1)</span>.</p></li>
-</ul>
+</ol>
 </div>
+<section id="annotations-from-class-12" class="frame">
+<h3>Annotations from class</h3>
+<p>The key idea to keep in mind for deriving these first order ODE is
+that a first order ODE <span class="math display">$$\dfrac{dy}{dx} =
+f(x,y)$$</span> is just a rule for the slope as a function of <span
+class="math inline"><em>x</em></span> and <span
+class="math inline"><em>y</em></span>.</p>
+<ol type="a">
+<li><p>Translating the given rule, we have <span
+class="math display">$$\dfrac{dy}{dx} = x + y.$$</span></p></li>
+<li><p>The slope <span class="math inline">$\dfrac{dy}{dx}$</span> at
+<span class="math inline">(<em>x</em>, <em>y</em>)</span> must equal the
+slope between the points <span
+class="math inline">(<em>x</em>/2, 0)</span> and <span
+class="math inline">(<em>x</em>, <em>y</em>)</span>, which we calculate
+as <span class="math inline">$\dfrac{y-0}{x-x/2} = \dfrac{y}{x/2} =
+\dfrac{2y}{x}.$</span> Therefore, we obtain the ODE <span
+class="math display">$$\dfrac{dy}{dx} = \dfrac{2y}{x}.$$</span></p></li>
+</ol>
+</section>
+<section id="annotations-from-class-13" class="frame">
+<h3>Annotations from class</h3>
+<p>(c) Now, we have the slope <span
+class="math inline">$\dfrac{dy}{dx}$</span> at <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> must equal the
+negative reciprocal of the slope between the points <span
+class="math inline">(<em>x</em>, <em>y</em>)</span> and <span
+class="math inline">(0, 1)</span>. The slope between those points is
+<span class="math inline">$\dfrac{y-1}{x-0} = \frac{y-1}{x},$</span>
+leading to the ODE <span class="math display">$$\dfrac{dy}{dx} = -
+\dfrac{x}{y-1}.$$</span></p>
+</section>
 <div class="frame">
 <p><strong>Example.</strong> Show that the <em>two-parameter family of
 functions</em> <span
@@ -395,6 +621,23 @@ indexed by <span class="math inline"><em>A</em>, <em>B</em></span>
 solves the ODE <span
 class="math inline"><em>y</em>″ + 9<em>y</em> = 0.</span></p>
 </div>
+<section id="annotations-from-class-14" class="frame">
+<h3>Annotations from class</h3>
+<p>If <span
+class="math inline"><em>y</em> = <em>A</em>cos 3<em>x</em> + <em>B</em>sin 3<em>x</em>,</span>
+then <span
+class="math inline"><em>y</em>′ = −3<em>A</em>sin 3<em>x</em> + 3<em>B</em>cos 3<em>x</em></span>
+and <span
+class="math inline"><em>y</em>″ = −9<em>A</em>cos 3<em>x</em> − 9<em>B</em>sin 3<em>x</em></span>.
+Substituting yields <span class="math display">$$-9A \cos 3x - 9B \sin
+3x + 9(A \cos 3x + B \sin 3x) \overset{?}{=} 0 \implies 0
+\overset{\checkmark}{=} 0,$$</span> and so <span
+class="math inline"><em>y</em> = <em>A</em>cos 3<em>x</em> + <em>B</em>sin 3<em>x</em></span>
+solves the ODE for all <span class="math inline"><em>x</em></span>.
+Notice that this equation is second order, which corresponds to the
+general solution having 2 arbitrary constants (as we’ll discuss on the
+next slide).</p>
+</section>
 <section id="some-more-vocabulary" class="frame">
 <h3>Some more vocabulary</h3>
 <p>The <em>normal form</em> of an <span
@@ -404,6 +647,14 @@ Typically, the general solution will be an <span
 class="math inline"><em>n</em></span>-parameter family of solutions,
 indexed by <span class="math inline"><em>n</em></span> “integration
 constants".</p>
+</section>
+<section id="annotations-from-class-15" class="frame">
+<h3>Annotations from class</h3>
+<p>Intuitively, each derivative we need to undo introduces one
+integration constant, so if the ODE involves the <span
+class="math inline"><em>n</em></span>th derivative, we expect the
+general solution to have <span class="math inline"><em>n</em></span>
+arbitrary constants.</p>
 </section>
 <section id="big-course-goal" class="frame">
 <h3>Big course goal</h3>
