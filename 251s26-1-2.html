@@ -176,7 +176,6 @@ MathJax = {
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
-
   
 </head>
 <body>
@@ -198,6 +197,14 @@ role="doc-noteref"><sup>1</sup></a>, before considering a refined model
 of the form <span class="math inline">$\frac{dy}{dx} =
 f(x,y).$</span><br />
 </p>
+</section>
+<section id="annotations-from-class" class="frame">
+<h3>Annotations from class</h3>
+<p>Newton’s cooling <span class="math inline">$\dfrac{dT}{dt} =
+k(A-T)$</span>, the simple population model <span
+class="math inline">$\dfrac{dP}{dt} = kP$</span>, and the logistic
+population model <span class="math inline">$\dfrac{dP}{dt} =
+kP(M-P)$</span> are all examples of autonomous first order ODE.</p>
 </section>
 <div class="frame">
 <p>The “opposite" special case would be <span
@@ -221,6 +228,22 @@ class="math inline"><em>y</em>(1) = 3</span>.</p></li>
 <li><p>Take a look on Desmos!</p></li>
 </ol>
 </div>
+<section id="annotations-from-class-1" class="frame">
+<h3>Annotations from class</h3>
+<p>(a) We have <span class="math display">$$y = \int \dfrac 1 2 e^{2x} +
+\frac{x^3}{3} + C.$$</span> (b) Using <span
+class="math inline"><em>y</em>(1) = 3</span> leads to <span
+class="math display">$$3 = \frac 1 2 e^{2} + \frac 1 3 + C \implies C =
+3 - \frac 1 3 - \frac 1 2 e^2 = \frac 8 3 - \frac 1 2 e^{2},$$</span>
+and so the particular solution is then <span class="math display">$$y =
+\frac 1 2 e^{2x} + \dfrac{x^3}{3} + \frac 8 3 - \frac 1 2
+e^{2}.$$</span> (c) Plotting the above in Desmos will give you a slider
+for <span class="math inline"><em>C</em></span>, and adjusting the
+slider to <span class="math inline">$C = \frac 8 3 - \frac 1 2 e^2
+\approx -1$</span> shows this choice of <span
+class="math inline"><em>C</em></span> makes <span
+class="math inline"><em>y</em>(1) = 3</span>.</p>
+</section>
 <div class="frame">
 <p>This “solvable by directly integrating" also works for equations of
 the following forms: <span class="math display">$$\begin{aligned}
@@ -233,6 +256,44 @@ we undo, and so we obtain an <span
 class="math inline"><em>n</em></span>-parameter family for the <span
 class="math inline"><em>n</em></span>th-order “antiderivative
 equation".</p>
+</div>
+<section id="annotations-from-class-2" class="frame">
+<h3>Annotations from class</h3>
+<p>For example, the general solution to <span
+class="math display"><em>y</em>‴ = <em>e</em><sup><em>x</em>/2</sup> + sin (2<em>x</em>) + 6</span>
+is obtained by integrating three times: <span
+class="math display">$$\begin{aligned}
+y'' &amp;= 2e^{x/2} - \frac 1 2 \cos(2x) + 6x + C, \\
+y' &amp;= 4e^{x/2} - \frac 1 4 \sin(2x) + 3x^2 + Cx + D,\\
+y &amp;= 8e^{x/2} - \frac 1 8 \cos(2x) + x^3 + \frac{C}{2}x^2 + Dx + E.
+\end{aligned}$$</span> For the integral <span
+class="math inline">∫<em>e</em><sup><em>x</em>/2</sup> <em>d</em><em>x</em>,</span>
+we substitute <span
+class="math inline"><em>u</em> = <em>x</em>/2, <em>d</em><em>u</em> = <em>d</em><em>x</em>/2</span>
+and so <span
+class="math inline"><em>d</em><em>x</em> = 2 <em>d</em><em>u</em></span>.
+This leads to <span class="math display">$$\int e^u \cdot \frac 1 2 \,
+du = \frac 1 2 e^u = \frac 1 2 e^{x/2}.$$</span></p>
+</section>
+<div class="frame">
+<p>Similarly, for <span
+class="math inline">∫sin (2<em>x</em>) <em>d</em><em>x</em></span> we
+substitute <span
+class="math inline"><em>u</em> = 2<em>x</em>, <em>d</em><em>u</em> = 2 <em>d</em><em>x</em></span>
+and so <span class="math inline">$dx = \frac 1 2 \, du$</span> and <span
+class="math display">$$\int \sin(u) \cdot \frac 1 2 \, du = - \frac 1 2
+\cos(u) = -\frac 1 2 \cos(2x),$$</span> since we remember <span
+class="math inline">$\frac{d}{dx} \cos x = - \sin x.$</span></p>
+</div>
+<div class="frame">
+<p>We can absorb the factor of <span class="math inline">$\frac 1
+2$</span> into the arbitrary constant <span
+class="math inline"><em>C</em></span>, and we also can use whichever
+names we want for the constants. So, we have the equivalent
+three-parameter family of functions <span class="math display">$$y = 8
+e^{x/2} - \frac 1 8 \cos(2x) + x^3 + c_1 x^2 + c_2 x + c_3,$$</span> and
+remember that we expect three arbitrary constants in the general
+solution of a third order ODE.</p>
 </div>
 <section id="position-velocity-and-acceleration" class="frame">
 <h3>Position, velocity, and acceleration</h3>
@@ -249,6 +310,20 @@ mass of the particle, Newton’s second law states <span
 class="math display"><em>m</em><em>a</em>(<em>t</em>) = <em>F</em>(<em>t</em>)</span>
 where <span class="math inline"><em>F</em>(<em>t</em>)</span> is the
 force acting on the particle along its line of motion.</p>
+</section>
+<section id="annotations-from-class-3" class="frame">
+<h3>Annotations from class</h3>
+<p>Note that <span class="math inline"><em>v</em></span> is signed, and
+the sign indicates the direction of motion. If the <span
+class="math inline"><em>x</em></span>-axis is pointing to the right,
+then <span class="math inline"><em>v</em> &gt; 0</span> means the
+particle is moving to the right, while <span
+class="math inline"><em>v</em> &lt; 0</span> means the particle is
+moving to the left. The speed is always positive (or zero) — think about
+how your car speedometer doesn’t have negative values, or care in which
+direction you’re driving. Note that in the case of multidimensional
+motion, the velocity is a vector quantity and the speed is it’s
+length.</p>
 </section>
 <section id="constant-acceleration" class="frame">
 <h3>Constant acceleration</h3>
@@ -275,12 +350,57 @@ At what height above the surface should the thrusters be activated to
 ensure a “soft touchdown" (<span
 class="math inline"><em>v</em> = 0</span> on impact)?</p>
 </section>
+<section id="annotations-from-class-4" class="frame">
+<h3>Annotations from class</h3>
+<p>Let <span class="math inline"><em>x</em></span> be the height above
+the surface of the moon, and suppose we turn the thrusters on at <span
+class="math inline"><em>t</em> = 0</span>. Then, <span
+class="math inline"><em>x</em>(0) = <em>x</em><sub>0</sub></span> is the
+height we wish to solve for, and <span
+class="math inline"><em>v</em>(0) = −450</span>. We have <span
+class="math inline">$a(t) = \frac{dv}{dt} = 2.5$</span> for all <span
+class="math inline"><em>t</em> ≥ 0</span>. Integrating, we obtain <span
+class="math display"><em>v</em>(<em>t</em>) = 2.5<em>t</em> + <em>C</em>,</span>
+and using <span class="math inline"><em>v</em>(0) = −450</span> yields
+<span class="math inline"><em>C</em> = −450</span> and so <span
+class="math display">$$v(t) =\frac{dx}{dt}= 2.5t - 450.$$</span>
+Integrating again, we have <span
+class="math display"><em>x</em>(<em>t</em>) = 1.25<em>t</em><sup>2</sup> − 450<em>t</em> + <em>C</em>,</span>
+and using <span
+class="math inline"><em>x</em>(0) = <em>x</em><sub>0</sub></span> yields
+<span class="math inline"><em>C</em> = <em>x</em><sub>0</sub></span> and
+so <span
+class="math display"><em>x</em>(<em>t</em>) = 1.25<em>t</em><sup>2</sup> − 450<em>t</em> + <em>x</em><sub>0</sub>.</span>
+Let’s call <span class="math inline"><em>T</em></span> the landing time,
+so that <span class="math inline"><em>x</em>(<em>T</em>) = 0</span>. To
+be a soft landing, we also know <span
+class="math inline"><em>v</em>(<em>T</em>) = 0</span> and so we solve
+<span
+class="math display">0 = 2.5<em>T</em> − 450 ⟹ <em>T</em> = 180.</span>
+Then, <span
+class="math inline"><em>x</em>(<em>T</em>) = <em>x</em>(180) = 0</span>
+in our position function yields <span
+class="math display">0 = 1.25(180<sup>2</sup>) − 450(180) + <em>x</em><sub>0</sub> ⟹ <em>x</em><sub>0</sub> = 450(180) − 1.25(180<sup>2</sup>) = 40500
+m.</span> Therefore, we should activate the thrusters when the lander is
+40.5 km from the moon’s surface.</p>
+</section>
 <section id="units" class="frame">
 <h3>Units</h3>
 <p><img src="units.png" alt="image" /><br />
 The <em>weight</em> of an object is the force exerted by gravity on the
 object, so at sea level on Earth is <span
 class="math inline"><em>m</em><em>g</em></span>.</p>
+</section>
+<section id="annotations-from-class-5" class="frame">
+<h3>Annotations from class</h3>
+<p>When at the surface of earth (or nearby so that the gravitational
+acceleration can be assumed to be constant), we have that <span
+class="math inline"><em>g</em></span> is the constant of proportionality
+between an objects mass and weight.<br />
+For example, an object with mass 1 kg has weight 9.8 N in SI
+units.<br />
+Similarly, an object with mass 1 slug has weight 32 lb in imperial
+units.</p>
 </section>
 <div class="frame">
 <p><strong>Example.</strong> A projectile is fired straight upward with
@@ -291,6 +411,54 @@ falls to the ground at the base of the building. Find</p>
 <li><p>when it passes the top of the building</p></li>
 <li><p>its total time in the air</p></li>
 </ol>
+</div>
+<section id="annotations-from-class-6" class="frame">
+<h3>Annotations from class</h3>
+<p>Let <span class="math inline"><em>x</em>(<em>t</em>)</span> be the
+height of the projectile (in meters) above the ground at time <span
+class="math inline"><em>t</em></span> (in seconds).<br />
+We have <span class="math inline">$a(t) = \frac{dv}{dt} = -9.8$</span>
+for <span class="math inline"><em>t</em> ≥ 0</span>, along with <span
+class="math inline"><em>v</em>(0) = 100, <em>x</em>(0) = 20</span>.<br />
+Integrating yields <span
+class="math inline"><em>v</em>(<em>t</em>) = −9.8<em>t</em> + <em>C</em>,</span>
+and using <span class="math inline"><em>v</em>(0) = 100</span> leads to
+<span
+class="math display"><em>v</em>(<em>t</em>) = −9.8<em>t</em> + 100.</span>
+Integrating again yields <span
+class="math inline"><em>x</em>(<em>t</em>) = −4.9<em>t</em><sup>2</sup> + 100<em>t</em> + <em>C</em>,</span>
+and using <span class="math inline"><em>x</em>(0) = 20</span> yields
+<span
+class="math display"><em>x</em>(<em>t</em>) = −4.9<em>t</em><sup>2</sup> + 100<em>t</em> + 20.</span></p>
+</section>
+<div class="frame">
+<p>(a) To find the maximum of <span
+class="math inline"><em>x</em>(<em>t</em>),</span> we set <span
+class="math inline"><em>x</em>′(<em>t</em>) = <em>v</em>(<em>t</em>) = 0</span>
+and find this occurs for <span class="math inline">$t =
+\frac{100}{9.8}.$</span> We see that <span
+class="math inline"><em>v</em>(<em>t</em>)</span> is going from positive
+to negative at this <span class="math inline"><em>t</em></span>-value
+(it’s a linear function with negative slope), and so this must
+correspond to the absolute maximum of <span
+class="math inline"><em>x</em>(<em>t</em>).</span> Therefore, the
+maximum height is <span class="math inline">$x\left( \frac{100}{9.8}
+\right) = \cdots.$</span><br />
+(b) We set <span class="math inline"><em>x</em>(<em>t</em>) = 20</span>
+and solve for <span class="math inline"><em>t</em></span> to determine
+when the projectile passes the top of the building. This yields <span
+class="math display">20 = −4.9<em>t</em><sup>2</sup> + 100<em>t</em> + 20 ⟹ 0 = <em>t</em>(−4.9<em>t</em> + 100).</span></p>
+</div>
+<div class="frame">
+<p>We know <span class="math inline"><em>x</em>(0) = 20</span> already,
+and so we’re interested in the other solution <span
+class="math inline">$t = \frac{100}{4.9}.$</span> (c) We set <span
+class="math inline"><em>x</em>(<em>t</em>) = 0</span> and solve for
+<span class="math inline"><em>t</em></span>. Using the quadratic formula
+will yield one positive and one negative solution, and we will choose
+the positive solution since <span
+class="math inline"><em>t</em> &lt; 0</span> is before the projectile is
+fired (“before our experiment begins").</p>
 </div>
 <section id="footnotes" class="footnotes footnotes-end-of-document"
 role="doc-endnotes">
