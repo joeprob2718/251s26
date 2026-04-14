@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>251-Integral_Review</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>251-Partial_Fractions_Review</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7492,500 +7492,241 @@ MathJax = {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Math-251-Integration-review">Math 251 Integration review<a class="anchor-link" href="#Math-251-Integration-review">¶</a></h1><h2 id="Basic-integral-formulas,-substitution,-parts,-partial-fractions-for-simple-linear-factors-in-denominator">Basic integral formulas, substitution, parts, partial fractions for simple linear factors in denominator<a class="anchor-link" href="#Basic-integral-formulas,-substitution,-parts,-partial-fractions-for-simple-linear-factors-in-denominator">¶</a></h2><ol>
-<li><p>$\displaystyle \int (4x -5)^{6}~dx$</p>
+<h1 id="Math-251-Partial-Fractions-review">Math 251 Partial Fractions review<a class="anchor-link" href="#Math-251-Partial-Fractions-review">¶</a></h1><ol>
+<li><p>$\displaystyle \dfrac{1}{s^2-9}$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-  We see an "inside function" $u= 4x-5$, meaning that $du = 4\, dx$ or equivalently $dx = \frac 1 4 \, du.$  
-    Implementing the substitution yields
-    \begin{align*}
-\int (\underbrace{4x-5}_{u})^6~\underbrace{dx}_{\frac 1 4 \, du} &amp;= \frac 1 4 \int u^6~du \\
-    &amp;= \frac 1 4\left( \frac{u^7}{7}\right) + C \\
-    &amp;= \fbox{$\frac{(4x-5)^7}{28} + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int \sin \left( \dfrac{5x - \pi}{6} \right)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We see an "inside function" $u=\frac{5x-\pi}{6}$, meaning that $du = \frac 5 6 \, dx$ or equivalently $dx = \frac 6 5 \, du$.  Implementing the substitution yields
-    \begin{align*}
-\int \sin \left( \underbrace{\frac{5x-\pi}{6}}_{u} \right) \underbrace{dx}_{\frac 6 5 \, du} &amp;= \frac 6 5 \int \sin u~du \\
-    &amp;= - \frac 6 5 \cos u + C \\
-    &amp;= \fbox{$-\frac 6 5 \cos\left( \frac{5x-\pi}{6} \right)+C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int t(1-t^{2})^{1/2}~dt$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We see a nonlinear "inside function" $u = 1-t^2$, meaning that $du = -2t\, dt$ or equivalently $t\, dt = - \frac 1 2 \, du$.  Implementing the substitution yields
-    \begin{align*}
-\int t(1-t^2)^{1/2}~dt = \int (\underbrace{1-t^2}_{u})^{1/2} \underbrace{t \, dt}_{- \frac 1 2 \, du} \\
-    &amp;= - \frac 1 2 \int u^{1/2}~du \\
-    &amp;= - \frac 1 2 \left( \frac{2u^{3/2}}{3} \right) + C \\
-    &amp;=\fbox{$ - \frac{(1-t^2)^{3/2}}{3} + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int \tan(x)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  $\tan x$ is not the derivative of any of the basic trigonometric functions --- the key here is to remember $\tan x = \frac{\sin x}{\cos x}$ and use a substitution.  If $u = \cos x$, then $du = - \sin x \, dx$ and so we have
-    \begin{align*}
-\int \tan x ~ dx &amp;= \int \underbrace{\left( \frac{1}{\cos x} \right)}_{\frac 1 u} \underbrace{\sin x\, dx}_{- du} \\
-    &amp;= - \int \frac 1 u ~ du \\
-    &amp;= - \ln|u| + C \\
-    &amp;=\fbox{$ - \ln|\cos x| + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$ \displaystyle \int \frac{x}{4+x^2}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  If you look at it as 
-    $$ \int (4+x^2)^{-1} \, x~dx,$$
-    we see an inside function $u=4+x^2$.  Then $du = 2x \, dx$, and $x \, dx = \dfrac 1 2 \, du.$ Then, we have
-    $$ \int \underbrace{(4+x^2)^{-1}}_{u^{-1}} \, \underbrace{x~dx}_{\frac 1 2 \, du} = \frac 1 2 \int u^{-1} \, du = \cdots =\fbox{$\frac 1 2 \ln(x^2+4)+C$}.$$
-    (Since $x^2 + 4 \geq 4 &gt; 0$ we don't need the absolute value.)
-</details>
-</li>
-<li><p>$\displaystyle \int \frac{1}{4+x^2}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  This is similar to the previous problem, but we don't have the derivative of $u=4+x^2$ (up to a constant factor) since the numerator is constant this time.  Instead, we'll need to use
-    $$ \int \frac{1}{1+x^2} \, dx = \arctan x + C.$$
-    However, we need to be mindful of the constant term in the denominator.  The usual trick is to proceed with
-    $$ \int \frac{1}{4+x^2} \, dx = \int \frac{1}{4\left(1+\frac{x^2}{4}\right)} \, dx = \frac 1 4 \int \frac{1}{1 + \left( \frac x 2 \right)^2} \, dx,$$
-    to which we can apply the substitution $u = \frac x 2, du = \frac 1 2 \, dx$.  We then have
-    $$ \frac 1 4 \int \frac{1}{1+u^2} \, (2 \, du) = \frac 2 4 \arctan u + C = \fbox{$\dfrac 1 2 \arctan\left( \frac x 2 \right) + C$}.$$
-    This integral occurs often enough in the last step of partial fractions (which we'll discuss in section 7.5) that you may find it useful to remember
-    $$ \int \frac{1}{a^2 + x^2}\, dx = \frac 1 a \arctan \left( \frac x a \right) + C.$$
-    However, if you don't remember or don't trust your memory, you can figure it out using the steps above.
-</details>
-</li>
-<li><p>$\displaystyle \int \frac{4+x^2}{x}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  While this looks a little like the previous two problems it is much easier since we can do a little algebra first:
-    $$ \int \left( \frac 4 x + \frac{x^2}{x} \right)~ dx = \int \frac 4 x \, dx + \int x \, dx = \fbox{$4 \ln|x| + \frac{x^2}{2} + C$}.$$
-    Please don't do this sort of thing with terms in a denominator!!!
-</details>
-</li>
-<li><p>$\displaystyle \int \left( 3^x + e^{2x} + \sqrt{x}\right)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  Recall for general exponential functions we have
-    \begin{align*}
-     \int b^x \, dx &amp;= \int e^{\ln(b^x)} \, dx \qquad \mbox{(exponential/log cancellation)} \\
-     &amp;= \int e^{x \ln b} \, dx \qquad \mbox{(log property)} \\
-     &amp;= \frac{e^{x \ln b}}{\ln b} + C \qquad \mbox{(substitute }u=x \ln b \mbox{ and integrate}),\\
-     &amp;= \frac{e^{\ln(b^x)}}{\ln b} + C \qquad \mbox{(log property)}\\
-     &amp;= \frac{b^x}{\ln b} + C \qquad \mbox{(exponential/log cancellation)}.
-     \end{align*}
-     Then, along with another linear substitution on the second term yeilds
-     $$ \fbox{$\frac{3^x}{\ln 3} + \frac{e^{2x}}{2} + \frac 2 3 x^{3/2} + C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int \sqrt{x} (x+1)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  Our best bet here is to proceed with
-     $$ \int \left(\sqrt{x}\cdot x + \sqrt{x}\right) \, dx = \int \left( x^{3/2} + x^{1/2} \right) \, dx = \fbox{$\frac 2 5 x^{5/2} + \frac 2 3 x^{3/2} + C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int x \sqrt{x+1}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We can't expand $\sqrt{x+1}$, and rewriting as 
-     $$ \int \sqrt{x^3 + x^2} \, dx$$
-     won't help since we don't have the inside function's derivative (up to a constant factor).  However, if we attempt the substitution $u = x+1$, we have $du = dx$ and therefore 
-     $$ \int x \underbrace{\sqrt{x+1}}_{\sqrt{u}} \, \underbrace{dx}_{du},$$
-     and we can deal with the remaining $x$ by recognizing $u = x+1 \iff u-1 = x.$  Then, we have
-     $$\int \underbrace{x}_{u-1} \underbrace{\sqrt{x+1}}_{\sqrt{u}} \, \underbrace{dx}_{du} = \int (u-1) \sqrt{u} \, du = \int (u^{3/2} - u^{1/2}) \, du = \cdots = \fbox{$\frac 2 5 (x+1)^{5/2} - \frac 2 3 (x+1)^{3/2} + C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int_{-1}^1 x^2e^{x^3+1}\;dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-We substitute $u=x^3+1, du= 3x^2 dx$ and so $\frac{1}{3}du = x^2dx$.  We can change bounds too to avoid ever having to go back to $x$: $x=-1$ means $u=0$, and $x=1$ means $u=2$.  Therefore,
-$$ \int_0^2 \frac{1}{3} e^u~du = \frac{e^u}{3}\Big|_0^2 =\fbox{$\frac{e^2-1}{3}$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int x\tan(x^2) \, dx.$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-These substitutions can be done in two steps, but if we recognize 
-    $$ \int \frac{x \sin(x^2)}{\cos(x^2)}~dx$$
-    then we can do it all in one step with substituting $u=\cos(x^2)$, $du = -2x \sin(x^2)dx$, and so $-\frac{1}{2} du = x \sin(x^2)dx$.  Therefore,
-    $$ -\frac{1}{2} \int \frac 1 u ~du = -\frac{1}{2} \ln|u|+C = \fbox{$-\frac{1}{2} \ln|\cos(x^2)|+C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int{\frac{\left(e^x\right)^2}{e^x+1}}~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-We substitute $u=e^x+1$, $du= e^x dx$, (recognizing one extra factor of $e^x$ in the numerator as $u-1$) to obtain
-    $$ \int \frac{u-1}{u}~du = \int \left( 1-\frac 1 u \right)~du = u - \ln|u|+C = \fbox{$1+e^x - \ln(1+e^x)+C$}.$$
-    (Depending on your exact approach you may get a slightly different looking answer --- the first term "1" above could be absorbed into the $+C$, which would give you the form of the answer some other methods do.)
-</details>
-</li>
-<li><p>$\displaystyle \int \frac{e^x}{1+e^{2x}}~dx.$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-The key here is to remember $e^{2x} = (e^x)^2$, so if we look at it as
-    $$ \int \frac{1}{1+(e^x)^2} \, \underbrace{e^x dx},$$
-    we see the "arctangent" pattern if we substitute $u=e^x, du = e^x \, dx$:
-    $$ \int \frac{1}{1+u^2} \, du = \arctan u + C = \fbox{$\arctan(e^x)+C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int_1^4 \left(x+2x^2+\sqrt{x}-\frac{1}{x^2}\right)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   $\displaystyle \int_1^4 \left(x+2x^2+\sqrt{x}-\frac{1}{x^2}\right)dx=\left.\frac{x^2}{2}+\frac{2x^3}{3}+\frac{x^{3/2}}{3/2}-\frac{x^{-1}}{-1}\right|_1^4\\=\frac{4^2}{2}+\frac{2\cdot4^3}{3}+\frac{4^{3/2}}{3/2}-\frac{4^{-1}}{-1}-\left( \frac{1^2}{2}+\frac{2\cdot1^3}{3}+\frac{1^{3/2}}{3/2}-\frac{1^{-1}}{-1}\right)=\fbox{$\frac{641}{12}$}$.
- </details>
-</li>
-<li><p>$\displaystyle \int_{-e}^{-1} \frac{x^2+1}{x}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   $\displaystyle \int_{-e}^{-1} \frac{x^2+1}{x}dx=\int_{-e}^{-1}x+\frac{1}{x}dx=\left.\frac{x^2}{2}+\ln|x| \right|_{-e}^{-1}=\left(\frac{1}{2}+\ln|-1|\right)-\left(\frac{e^2}{2}+\ln|-e|\right)=\fbox{$-\frac{1}{2}-\frac{e^2}{2}$}$. 
- </details>
-</li>
-<li><p>$\displaystyle \int_0^1 \sqrt{e^{2x}}~ dx $</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   $\displaystyle \int_0^1 \sqrt{e^{2x}} dx =\int_0^1 e^{x} dx=e^x\Big|_0^1=\fbox{$e-1$}.$
- </details>
-</li>
-<li><p>$\displaystyle \int_0^4 \left( x+|1-x|\right)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We use the piecewise definition of absolute value:
-     $$ |x| = \left\{ \begin{array}{lr} x &amp; x \geq 0 \\ -x &amp; x &lt; 0 \end{array} \right. , $$
-     so that
-     $$ |1-x| = \left\{ \begin{array}{lr} 1-x &amp; 1-x \geq 0 \iff x \leq 1 \\ -(1-x) &amp; 1-x &lt; 0 \iff x &gt; 1 \end{array} \right. $$
-     Then, using the different formulas on the appropriate values of $x$, we have
-     \begin{align*}
-      \int_0^4 (x + |1-x|) \, dx &amp;= \int_0^1 (x + 1-x) \, dx + \int_1^4 (x-(1-x)) \, dx  \\
-      &amp;= \int_0^1 1 \, dx + \int_1^4 (2x-1) \, dx \\
-      &amp;= x \Big|_0^1 + (x^2-x)\Big|_1^4 \\
-      &amp;= 1 + (12 - 0) = 13.
-      \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int_0^4 \sqrt{x} ~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-     We have
-     \begin{align*}
-     \int_0^4 \sqrt{x}~dx &amp;= \int_0^4 x^{1/2}~dx \\
-     &amp;= \frac{x^{1/2+1}}{1/2+1} \bigg|_0^4 \\
-     &amp;= \frac{2}{3} x^{3/2} \bigg|_0^4 \\
-     &amp;= \frac 2 3 \left( 4^{3/2}-0^{3/2} \right) \\
-     &amp;= \frac 2 3 \left( 64^{1/2}-0^{3/2} \right) \\
-     &amp;= \fbox{$\dfrac{16}{3}$}.
-     \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \sqrt{x} (1-x^2)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-     \begin{align*}
-     \int \sqrt{x} (1-x^2)\,dx&amp;=\int \sqrt{x}-x^{5/2} \,dx\\
-     &amp;=\dfrac{x^{3/2}}{3/2}-\dfrac{x^{7/2}}{7/2}+C\\
-     &amp;=\fbox{$\frac{2}{3}x^{3/2}-\frac{2}{7}x^{7/2}+C$}
-     \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int -\dfrac{x~dx}{2\sqrt{1-x^2}}$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We substitute $u= 1-x^2$, $du = -2x\,dx$ to obtain
-     $$-\frac{1}{2}\int \dfrac{x\,\,dx}{\sqrt{1-x^2}}=-\frac{1}{2} \left( -\frac 1 2 \right) \int \frac{1}{\sqrt{u}}~du = \frac{2}{4}\sqrt{u}+C =\fbox{$\dfrac{\sqrt{1-x^2}}{2}+C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int -\dfrac{dx}{2\sqrt{1-x^2}}$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   Recall that
-     $$\frac{d}{dx} \arcsin x = \frac{1}{\sqrt{1-x^2}}$$
-     and so we obtain
-     $$-\frac{1}{2}\int \dfrac{dx}{\sqrt{1-x^2}}= \fbox{$- \dfrac 1 2 \arcsin x + C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int (7x + 8)^{9}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We see an "inside function" $u=7x+8$ and so $du = 7\, dx$, or equivalently $dx = \frac 1 7 \, du$.  
-   Implementing this substitution yields
-   $$ \int (\underbrace{7x+8}_{u})^9 \underbrace{dx}_{\frac 1 7 \, du} = \frac 1 7 \int u^9 ~du = \frac{u^{10}}{70}+C = \fbox{$\frac{(7x+8)^{10}}{70} + C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int x(x^{2} + 1)^{1/2}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We see an "inside function" $u=x^2 + 1$ as well as a constant factor of the corresponding $du = 2x\, dx$, which we can manipulate to $x\, dx = \frac 1 2 \, du$.  Implementing this substitution yields
-     $$ \int (\underbrace{x^2+1}_{u})^{1/2} \underbrace{x \, dx}_{\frac 1 2 \, du} = \frac 1 2 \int u^{1/2}~du = \frac 1 2 \left( \frac{2u^{3/2}}{3}\right) + C = \fbox{$\frac{(x^2+1)^{3/2}}{3} + C$}.$$ 
- </details>
-</li>
-<li><p>$\displaystyle \int x^{2}(x + 1)^{1/2}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   Here we see an "inside function" $u = x+1$ which means $du = dx$.  To deal with the "extra" factor of $x^2$, we need to recognize that $x = u-1$.  Therefore, we have
-   \begin{align*}
- \int {\underbrace{x^2}_{(u-1)^2}}  \underbrace{(x+1)^{1/2}}_{u^{1/2}} \underbrace{dx}_{du} &amp;= \int (u-1)^2 u^{1/2}~du \\ &amp;= \int (u^2 - 2u+1)u^{1/2}~du \\
- &amp;= \int \left( u^{5/2} - 2u^{3/2} + u^{1/2}  \right)~du \\
- &amp;= \frac{2u^{7/2}}{7} - \frac{4u^{5/2}}{5} + \frac{2u^{3/2}}{3} + C \\
- &amp;= \fbox{$\frac{2(x+1)^{7/2}}{7} - \frac{4(x+1)^{5/2}}{5} + \frac{2(x+1)^{3/2}}{3} + C$}.
- \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \pi^x+x^\pi+\pi^2 \,dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   \begin{align*}
-\int&amp; \underbrace{\pi^x}_{\text{exponential function}}+\underbrace{x^\pi}_{\text{power function}}+\underbrace{\pi^2}_{\text{constant}} \,dx\\
-=&amp; \fbox{$\;\;\;\;\; \;\;\;\frac{\pi^x}{\ln(\pi)}\;\;\;\;\;\;\;\;+\;\;\;\;\dfrac{x^{\pi+1}}{\pi+1}\;\;\;\;\;\;+\;\;\;\pi^2x\;\;\;+\;\;\;C$}.
-\end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \sqrt{x}\left(x+2\right) \,dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   There is NO PRODUCT RULE FOR ANTIDERIVATIVES. That is, 
-     $$\mbox{We CANNOT write } \int f(x)g(x) ~dx  \mbox{ as some combination of $f$, $g$, and/or their antiderivatives}.$$ However, we can rewrite the integrand by distributing
-     \begin{align*}
-\int \sqrt{x}\left(x+2\right) \,dx &amp;=\int x^{3/2}+2\sqrt{x} \,dx\\
-     &amp;=\frac{2}{5}x^{5/2}+2\cdot\frac{2}{3}x^{3/2}+C\\
-     &amp;= \fbox{$\frac{2}{5}x^{5/2}+\frac{4}{3}x^{3/2}+C$}.
-     \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \frac{3x^2+1}{x} \, dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   There is NO QUOTIENT RULE FOR ANTIDERIVATIVES. That is, 
-     $$\mbox{We CANNOT write } \int \frac{f(x)}{g(x)} ~dx  \mbox{ as some combination of $f$, $g$, and/or their antiderivatives}.$$ Therefore, we need to deal with the division before proceeding.  However, the denominator is just one term, and so we have
-     \begin{align*}
-     \int \frac{3x^2+1}{x}~dx &amp;= \int \left( \frac{3x^2}{x} + \frac{1}{x} \right)~dx \\
-     &amp;= \int \left(3x + \frac 1 x \right)~dx \\
-     &amp;= \fbox{$\frac{3}{2} x^2 + \ln|x|+C$}. \\
-     \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \sqrt{7y - 5}~dy$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We can substitute $u= 7y-5, du = 5\, dy$ to obtain
-     $$ \int \underbrace{\sqrt{7y-5}}_{\sqrt{u}} \underbrace{dy}_{\frac 1 7 du} = \frac 1 7 \int \sqrt{u}\, du = \frac 1 7 \left( \frac 2 3 u^{3/2}  \right)+C = \fbox{$\frac{2 (7y-5)^{3/2}}{21} + C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int \tan(4x+1)~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-     We recognize
-     $$\int \tan(4x+1)~dx = \int \frac{\sin(4x+1)}{\cos(4x+1)}~dx = \int \Big( \cos(4x+1) \Big)^{-1} \sin(4x+1)\, dx,$$
-     and so we see an inside function $u = \cos(4x+1)$ as well as a constant factor of \\$du = -4 \sin(4x+1)\, dx$.  We have
-     $$ \int \underbrace{\Big( \cos(4x+1) \Big)^{-1}}_{u^{-1}} \underbrace{ \sin(4x+1)\, dx}_{- \frac 1 4 du} = - \frac 1 4 \int \frac 1 u \, du = - \frac 1 4 \ln|u| + C = \fbox{$-\frac 1 4 \ln|\cos(4x+1)| + C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int_{e}^{e^2} \dfrac{dx}{x \ln x}$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-    We can use $u= \ln x, du = \frac 1 x \, dx$.  We might as well change bounds so that we can finish off evaluating the $u$ definite integral rather than needing to substitute back in for $u$ in terms of $x$: $x=e$ means $u = \ln e = 1$, and $x=e^2$ means $u = \ln(e^2) = 2$.  We have
-    $$ \int_{x=e}^{x=e^2} \frac{dx}{x \ln x} = \int_{u=1}^{u=2} \frac 1 u \, du = \ln|u| \Big|_{u=1}^{u=2} = \ln 2 - \ln 1 = \fbox{$\ln 2$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int  \dfrac{3^{\ln x}}{x}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-    We can look at this as
-    $$ \int 3^{\ln x} \, \frac 1 x \, dx,$$
-    and implement the substitution $u = \ln x, du = \frac 1 x \, dx$ to obtain
-    $$ \int \underbrace{3^{\ln x}}_{3^u}\underbrace{ \frac 1 x \, dx}_{du} = \int 3^u \, du = \frac{3^u}{\ln 3} + C = \fbox{$\frac{3^{\ln x}}{\ln 3} + C$}.$$  If you forget the anti-derivative rule
-    $$ \int b^x \, dx = \frac{b^x}{\ln b} + C,$$
-    you can figure it out by doing
-    $$ \int b^x \, dx = \int e^{\ln(b^x)} \, dx = \int e^{x \ln b}\, dx = \frac{1}{\ln b} e^{x \ln b}+C = \frac{1}{\ln b} e^{\ln(b^x)}+C = \frac{b^x}{\ln b} + C.$$
-</details>
-</li>
-<li><p>$\displaystyle \int  \cos x~e^{\sin x}~dx$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   We can substitute $u= \sin x, du = \cos x \, dx$ to obtain
-    $$ \int \underbrace{e^{\sin x}}_{e^u} \underbrace{ \cos x \, dx}_{du} = \int e^u \, du = e^u + C = \fbox{$e^{\sin x}+C$.}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int_1^8 t^2 \sqrt{t + 8}~dt$</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We can substitute $u= t+8, du = dt$.  However, we also will need $t = u-8$.  We change the bounds too: $t=1$ means $u=9$ and $t=8$ means $u=16$.  We have
-    $$ \int_{t=1}^{t=8} \underbrace{t^2}_{(u-8)^2} \underbrace{\sqrt{t+8}}_{\sqrt{u}} \underbrace{dt}_{du} = \int_{u=9}^{u=16} (u-8)^2 \sqrt{u} \, du.$$
-    We continue to obtain
-    \begin{align*}
-    \int_9^{16} (u^2-16u+64)u^{1/2}\, du =&amp; \int_9^{16} \left( u^{5/2} - 16u^{3/2} + 64u^{1/2}  \right)\, du \\
-    =&amp; \left( \frac{2u^{7/2}}{7} - 16 \frac{2u^{5/2}}{5} + 64 \frac{2u^{3/2}}{3}  \right)\Big|_9^{16} \\
-    =&amp; \left( \frac{2 (16^{7/2})}{7} - 16 \frac{2(16^{5/2})}{5} + 64 \frac{2(16^{3/2})}{3}  \right)\\
-     \qquad &amp;- \left( \frac{2 (9^{7/2})}{7} - 16 \frac{2(9^{5/2})}{5} + 64 \frac{2(9^{3/2})}{3}  \right) \\
-    =&amp; \frac{256}{7} - \frac{2^{10}}{5} + \frac{2^{13}}{3} -\frac{2(3^7)}{7} + \frac{32(243)}{5} - 128(9) .
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int x^3 \sin(x^2) \, dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-    We have the inside function for substitution $w=x^2$ along with $dw = 2x \;dx$, and so $\frac{1}{2}dw = x\;dx$.   The key idea is to recognize $x^3 = x^2 \; x$ and so
-     $$ \int x^3 \sin(x^2)~dx = \int x^2 \sin(x^2) \underbracket{\, x ~dx\,} = \frac{1}{2} \int w \sin(w)~dw.$$
-     (I picked $w$ since I knew we were going to do parts in a moment and didn't want to confuse with the $u,v$ names we're used to when doing parts.  Do whatever you need to do to not make a silly mistake from notation.) From here we do parts with $u=w, dv = \sin w \; dw$, and so $du = dw$ and $v= - \cos w$, giving us
-     $$ \frac{1}{2} \left(-w \cos w - \int (- \cos w)~dw \right) = -\frac{w}{2} \cos w + \frac{\sin w}{2} + C =\fbox{$-\dfrac{x^2}{2}\cos(x^2) + \dfrac{1}{2} \sin(x^2)+C$}.$$
- </details>
-</li>
-<li><p>$\displaystyle \int x^2 \sin(3x) \, dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-   This will work out if we do parts twice:
-     \begin{align*}
-     \int \underbrace{x^2}_{u} \underbrace{\sin(3x) \, dx}_{dv} &amp;= \underbrace{x^2}_u \underbrace{\left(-\frac{1}{3} \cos(3x)\right)}_{v} - \int \underbrace{\left(-\frac{1}{3} \cos(3x)\right)}_{v} \underbrace{2x \, dx}_{du} \\
-     &amp;= -\frac{x^2}{3} \cos(3x) + \int \frac{2x}{3} \cos(3x) \, dx.
-     \end{align*}
-     We then do parts again:
-     \begin{align*}
-     \int x^2 \sin(3x) \, dx &amp;= -\frac{x^2}{3} \cos(3x) +\int \underbrace{\frac{2x}{3}}_{u} \underbrace{ \cos(3x) \, dx}_{dv} \\
-     &amp;= -\frac{x^2}{3} \cos(3x) + \left( \underbrace{\frac{2x}{3}}_{u} \underbrace{ \frac{1}{3} \sin(3x)}_{v} - \int \underbrace{ \frac{1}{3} \sin(3x) }_{v} \underbrace{\frac{2}{3} \, dx}_{du}\right) \\
-     &amp;= -\frac{x^2}{3} \cos(3x) + \frac{2x}{9} \sin(3x) - \frac{2}{9} \int \sin(3x) \, dx \\
-     &amp;=\fbox{$-\dfrac{x^2}{3} \cos(3x) + \dfrac{2x}{9} \sin(3x) +\dfrac{2}{27} \cos(3x) + C$}.
-     \end{align*}
- </details>
-</li>
-<li><p>$\displaystyle \int \arcsin(5x)~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  If we use integration by parts with $u = \arcsin(5x), dv = dx$ then $du = \frac{1}{\sqrt{1-(5x)^2}} \, 5 \, dx$ and we have
-    $$ \int \underbrace{\arcsin(5x)}_{u} \underbrace{dx}_{dv} = \underbrace{\arcsin(5x)}_{u} \underbrace{x}_{v} - \int \underbrace{x}_{v} \underbrace{\frac{5}{\sqrt{1-25x^2}}}_{du} = x \arcsin(5x) - \int \frac{5x}{\sqrt{1-25x^2}}\, dx.$$
-    For the remaining integral we can substitute $w = 1-25x^2, dw = -50 x \, dx$ to obtain
-    $$ 5 \int \underbrace{\left( \frac{1}{\sqrt{1-25x^2}} \right)}_{\frac{1}{\sqrt{w}}} \underbrace{x \, dx}_{\left(- \frac{1}{50} dw \right)} = -\frac{1}{10} \int \frac{1}{\sqrt{w}} \, dw = - \frac 1 5 \sqrt{w}+C = - \frac 1 5 \sqrt{1-25x^2} + C.$$
-    Putting it all together,
-    $$ \int \arcsin(5x) = \fbox{$x \arcsin(5x) + \frac 1 5 \sqrt{1-25x^2} + C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int x\sin{x}~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We integrate by parts:
-$$ \int \underbrace{x}_{u} \underbrace{\sin x \, dx}_{dv} = \underbrace{x}_{u}\underbrace{-\cos x}_{v} - \int \underbrace{(-\cos x)}_{v} \underbrace{dx}_{du} = \fbox{$- x \cos x + \sin x + C$}.$$
-</details>
-</li>
-<li><p>$\displaystyle \int x \ln x~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-    We integrate by parts, and choose to differentiate $u = \ln x$:
-     \begin{align*}
-    \int \underbrace{\ln x}_{u} \underbrace{x \, dx}_{dv} &amp;= \underbrace{\ln x}_{u} \underbrace{\frac{x^2}{2}}_{v} -\int \underbrace{\frac{x^2}{2}}_{v} \underbrace{ \frac 1 x \, dx}_{du} \\
-    &amp;= \frac{x^2}{2} \ln x - \int \frac{x}{2} \, dx \\
-    &amp;= \fbox{$\frac{x^2}{2} \ln x - \frac{x^2}{4} + C$}.
-     \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int \ln{x}~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We integrate by parts with $dv = dx$:
-    \begin{align*}
-    \int \underbrace{\ln x}_{u} \underbrace{dx}_{dv} &amp;= \underbrace{\ln x}_{u} \underbrace{x}_{v} - \int \underbrace{x}_{v}\underbrace{ \frac 1 x \, dx}_{du} \\
-    &amp;= x \ln x - \int 1 \, dx \\
-    &amp;= \fbox{$x \ln x - x + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int x (\ln x)^2~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  We integrate by parts twice:
-    \begin{align*}
-    \int \underbrace{(\ln x)^2}_{u} \underbrace{x \, dx}_{dv} &amp;= \underbrace{(\ln x)^2}_{u} \underbrace{\frac{x^2}{2}}_{v} - \int \underbrace{\frac{x^2}{2}}_{v} \underbrace{ 2 (\ln x) \left(\frac 1 x\right) \, dx}_{du} \\
-    &amp;= \frac{x^2}{2} (\ln x)^2 - \int  x \ln x \, dx \\
-    &amp;= \frac{x^2}{2} (\ln x)^2 - \int \underbrace{(\ln x)}_{u}  \underbrace{x \, dx}_{dv} \\
-    &amp;= \frac{x^2}{2} (\ln x)^2 - \left( \underbrace{(\ln x)}_{u} \underbrace{\frac{x^2}{2}}_{v} - \int \underbrace{\frac{x^2}{2}}_{v} \underbrace{\left(\frac 1 x\right) \, dx}_{du} \right) \\
-    &amp;= \frac{x^2}{2} (\ln x)^2 - \frac{x^2}{2} \ln x + \int \frac{x}{2} \, dx \\
-    &amp;= \fbox{$ \frac{x^2}{2} (\ln x)^2 - \frac{x^2}{2} \ln x + \frac{x^2}{4} + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int x^2 \cos(3x)~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  This will work out if we do parts twice:
-    \begin{align*}
-    \int \underbrace{x^2}_{u} \underbrace{\cos(3x) \, dx}_{dv} &amp;= \underbrace{x^2}_u \underbrace{\frac{1}{3} \sin(3x)}_{v} - \int \underbrace{\frac{1}{3} \sin(3x)}_{v} \underbrace{2x \, dx}_{du} \\&amp;= \frac{x^2}{3} \sin(3x) - \int \frac{2x}{3} \sin(3x) \, dx.
-    \end{align*}
-    We then do parts again:
-    \begin{align*}
-    \int x^2 \cos(3x) \, dx &amp;= \frac{x^2}{3} \sin(3x) - \int \underbrace{\frac{2x}{3}}_{u} \underbrace{ \sin(3x) \, dx}_{dv} \\
-    &amp;= \frac{x^2}{3} \sin(3x) - \left( \underbrace{\frac{2x}{3}}_{u} \underbrace{ \left(-\frac{1}{3} \cos(3x)\right)}_{v} - \int \underbrace{\left( -\frac{1}{3} \cos(3x) \right)}_{v} \underbrace{\frac{2}{3} \, dx}_{du}\right) \\
-    &amp;= \frac{x^2}{3} \sin(3x) + \frac{2x}{9} \cos(3x) - \frac{2}{9} \int \cos(3x) \, dx \\
-    &amp;=\fbox{$\frac{x^2}{3} \sin(3x) + \frac{2x}{9} \cos(3x) - \frac{2}{27} \sin(3x) + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int x^7 \cos(x^4) ~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-  This is either (1) parts followed by a substitution, or (2) a substitution followed by parts.
-    Approach (1): We want to have the $\cos(x^4)$ be part of $dv$, but in order to know how to get its anti-derivative $v$ we need to borrow some $x$'s from the $x^7$ as follows:
-    $$\int \underbrace{x^4}_{u} \underbrace{x^3 \cos(x^4) \, dx}_{dv} = \underbrace{x^4}_{u} \underbrace{ \left(\frac{1}{4} \sin(x^4) \right)}_v - \int \underbrace{ \left(\frac{1}{4} \sin(x^4) \right)}_v \underbrace{4x^3 \, dx}_{du}.$$
-    (Going from $dv$ to $v$ we did a substitution $w = x^4, \frac{1}{4} dw = x^3 \, dx.$)
-    Then we have
-    \begin{align*}
-\int x^7 \cos(x^4) \, dx &amp;= \frac{x^4}{4} \sin(x^4) - \int x^3 \sin(x^4) \, dx\\
-    &amp;= \frac{x^4}{4} \sin(x^4) + \frac{1}{4} \cos(x^4) + C.
-    \end{align*}
-    (We did the same substitution $w = x^4, \frac{1}{4} dw = x^3 dx$ as we did for $dv \rightarrow v$.)
-    Approach (2): We try the substitution $w=x^4,$ $\frac{1}{4} dw = x^3 dx$.  However, we have "extra" $x$'s that we still have to deal with.  But we can carefully do
-    $$ \int \underbrace{x^4}_{w} \underbrace{\cos(x^4)}_{\cos w} \underbrace{ x^3 \, dx}_{\frac{1}{4} dw} = \frac 1 4 \int w \cos w \, dw.$$
-    (We can use $w$ so we don't get confused when we proceed with parts.  Integration, or "dummy" variables are just placeholders anyway, their names aren't important.)  
-    Then we use parts to do
-    \begin{align*}
-\frac{1}{4} \int \underbrace{w}_{u} \underbrace{ \cos w \, dw}_{dv} &amp;= \frac{1}{4} \underbrace{w}_{u} \underbrace{ \sin w}_{v} - \frac{1}{4} \int \underbrace{\sin w}_v \underbrace{ dw}_{du} \\
-    &amp;= \frac{w}{4} \sin w + \frac{1}{4} \cos w + C \\
-    &amp;= \fbox{$\frac{x^4}{4} \sin(x^4) + \frac{1}{4} \cos(x^4) + C$}.
-    \end{align*}
-</details>
-</li>
-<li><p>$\displaystyle \int \dfrac{1}{x^2-9} ~dx$.</p>
-<details>
-<summary><span style="color:red">Solution</span></summary>
-The denominator can be factored so we set up a partial fraction decomposition:
-$$ \dfrac{0x+1}{x^2-9} = \dfrac{A}{x+3} + \dfrac{B}{x-3} = \dfrac{A(x-3)+B(x+3)}{(x+3)(x-3)} = \dfrac{(A+B)x + (-3A+3B)}{x^2-9}.$$
-Matching coefficients in the numerator leads to the system of equations
+We set up a partial fraction decomposition:
+$$ \dfrac{1}{(s+3)(s-3)} = \dfrac{A}{s+3} + \dfrac{B}{s-3} $$
+Multiplying the original denominator yields
+$$0s+1 = (s+3)(s-3)\left[ \dfrac{A}{s+3} + \dfrac{B}{s-3} \right] = A(s-3)+B(s+3) = (A+B)s + (-3A+3B).$$
+Matching coefficients leads to the system of equations
 $$ \left\{ \begin{array}{rl} A+B &amp;= 0 \\ -3A+3B &amp;= 1 \end{array} \right. .$$
-The first equation means $B=-A$ and then the second means $-6A = 1$ so $A =- \frac 1 6$ and $B =  \frac 1 6$.  Therefore, we have
-    $$ \int \left( -\dfrac{1/6}{x+3} + \dfrac{1/6}{x-3} \right) ~dx = \fbox{$-\frac 1 6 \ln|x+3| + \frac 1 6 \ln|x-3| + C$}.$$
+The first equation means $B=-A$ and then the second means $-6A = 1$ so $A = -\frac 1 6$ and $B =  \frac 1 6$.  Therefore, we have
+    $$\dfrac{1}{s^2-9}=  \boxed{-\dfrac{1/6}{s+3} + \dfrac{1/6}{s-3}}.$$
 </details>
 </li>
-<li><p>$\displaystyle \int \dfrac{x+1}{x^2-x} ~dx$.</p>
+<li><p>$\dfrac{1}{s^2-1}$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-The denominator can be factored so we set up a partial fraction decomposition:
-$$ \dfrac{1x+1}{x^2-x} = \dfrac{A}{x} + \dfrac{B}{x-1} = \dfrac{A(x-1)+Bx}{x(x-1)} = \dfrac{(A+B)x + (-A)}{x^2-x}.$$
-Matching coefficients in the numerator leads to the system of equations
+ We set up a partial fraction decomposition:
+ $$ \dfrac{1}{(s+1)(s-1)} = \dfrac{A}{s+1} + \dfrac{B}{s-1} $$
+ Multiplying the original denominator yields
+ $$0s+1 = (s+1)(s-1)\left[ \dfrac{A}{s+1} + \dfrac{B}{s-1} \right] = A(s-1)+B(s+1) = (A+B)s + (-A+B).$$
+ Matching coefficients leads to the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 0 \\ -A+B &amp;= 1 \end{array} \right. .$$
+ The first equation means $B=-A$ and then the second means $-2A = 1$ so $A = -\frac 1 2$ and $B =  \frac 1 2$.  Therefore, we have
+     $$\dfrac{1}{s^2-1}=  \boxed{-\dfrac{1/2}{s+1} + \dfrac{1/2}{s-1}}.$$
+ </details>
+</li>
+<li><p>$\displaystyle \dfrac{s+1}{s^2-s}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+We set up a partial fraction decomposition:
+$$ \dfrac{s+1}{s(s-1)} = \dfrac{A}{s} + \dfrac{B}{s-1}.$$
+Multiplying the original denominator yields
+    $$1s+1 = s(s-1)\left[ \dfrac A s + \dfrac{B}{s-1}\right] = A(s-1) + Bs = (A+B)s + (-A).$$
+Matching coefficients leads to the system of equations
 $$ \left\{ \begin{array}{rl} A+B &amp;= 1 \\ -A &amp;= 1 \end{array} \right. .$$
 Then, $A=-1$ and then the first equation means $B=2$.  Therefore, we have
-    $$ \int \left( -\dfrac{1}{x} + \dfrac{2}{x-1} \right) ~dx = \fbox{$- \ln|x| +2 \ln|x-1| + C$}.$$  
+    $$\dfrac{s+1}{s^2-s}=\boxed{-\dfrac{1}{s} + \dfrac{2}{s-1}}.$$  
 </details>
 </li>
+<li><p>$\dfrac{1}{s^2-6s+8}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition:
+ $$\frac{1}{(s-2)(s-4)} = \frac{A}{s-2} + \frac{B}{s-4}.$$
+ Multiply by the original denominator to obtain
+ $$0s+1 = (s-2)(s-4) \left[ \frac{A}{s-2} + \frac{B}{s-4}\right] = A(s-4) + B(s-2) = (A+B)s + (-4A-2B).$$
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 0, \\ -4A-2B &amp;= 1. \end{array} \right. $$
+ Twice the first equation plus the second (chosen to cancel the $B$'s) yields
+ $$ 2A-4A = 2(0) + 1 \implies A = - \frac 1 2,$$
+ and then the first equation yields $B = \frac 1 2$.  Therefore, we obtain
+ $$\frac{1}{s^2-6s+8}= \boxed{\frac{-1/2}{s-2} + \frac{1/2}{s-4}} .$$ 
+ </details>
+</li>
+<li><p>$\dfrac{3}{s^2 - 4}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition:
+ $$ \dfrac{3}{(s+2)(s-2)} = \dfrac{A}{s+2} + \dfrac{B}{s-2} $$
+ Multiplying the original denominator yields
+ $$0s+3 = (s+2)(s-2)\left[ \dfrac{A}{s+2} + \dfrac{B}{s-2} \right] = A(s-2)+B(s+2) = (A+B)s + (-2A+2B).$$
+ Matching coefficients leads to the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 0 \\ -2A+2B &amp;= 3 \end{array} \right. .$$
+ The first equation means $B=-A$ and then the second means $-4A = 3$ so $A = -\frac 3 4$ and $B =  \frac 3 4$.  Therefore, we have
+     $$\dfrac{1}{s^2-9}=  \boxed{-\dfrac{3/4}{s+2} + \dfrac{3/4}{s-2}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{s^2 + 11s}{(s-1)(s^2+1)}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition ($s^2+1$is irreducible quadratic so requires a linear numerator):
+ $$\dfrac{s^2 + 11s}{(s-1)(s^2+1)} = \dfrac{A}{s-1} + \dfrac{Bs+C}{s^2+1}.$$
+ Multiplying by the original denominator yields
+ $$s^2 + 11s + 0 = (s-1)(s^2+1)\left[\frac{A}{s-1} + \frac{Bs+C}{s^2+1}\right] = A(s^2+1)+(Bs+C)(s-1).$$
+ Grouping like terms yields
+ $$s^2 + 11s + 0 = \cdots = (A+B)s^2 + (-B+C)s + (A-C).$$
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 1, \\ -B+C  &amp;= 11, \\ A-C &amp;= 0 \end{array} \right. $$
+ The first equation plus the second (to cancel out the $B$'s) yields $A+C = 12$, and adding this to the third equation (to cancel out the $C$'s) yields $2A = 12$.  Then $A=6, B=-5, C = 6$.  Therefore we have
+ $$\dfrac{s^2 + 11s}{(s-1)(s^2+1)}= \boxed{\frac{6}{s-1} + \frac{-5s+6}{s^2+1}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{8}{s(s+2)^3}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the linear factor $s+2$ has multiplicity 3, so we "work our way up to the multiplicity"):
+ $$\dfrac{8}{s(s+2)^3} = \dfrac{A}{s} + \dfrac{B}{s+2} + \dfrac{C}{(s+2)^2} + \dfrac{D}{(s+2)^3}.$$
+ Multiplying by the original denominator yields 
+ $$8 = s(s+2)^3\left[ \dfrac{A}{s} + \dfrac{B}{s+2} + \dfrac{C}{(s+2)^2} + \dfrac{D}{(s+2)^3}\right] = A(s+2)^3 + Bs(s+2)^2 + Cs(s+2) + Ds.$$
+ Expanding and grouping like terms yields
+ \begin{align*}
+ 0s^3 + 0s^2 + 0s + 8 &amp;= A(s^3 + 6s^2 + 12s + 8) + B(s^3 + 4s^2 + 4s) + C(s^2+2s) + Ds\\
+ &amp;= (A+B)s^3 + (6A + 4B + C)s^2 + (12A + 4B + 2C+D)s + 8A.
+ \end{align*}
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 0, \\ 6A + 4B + C &amp;= 0, \\ 12A + 4B + 2C + D &amp;= 0, \\ 8A &amp;= 8 .\end{array} \right. $$
+ The fourth equation yields $A=1$, and the first then yields $B=-1$.  Then the third yields $C=-2$, and the fourth yields $D=-4$.  Therefore, we have
+ $$ \dfrac{8}{s(s+2)^3}=\boxed{\frac{1}{s} - \frac{1}{s+2} - \frac{2}{(s+2)^2}  - \frac{4}{(s+2)^3}}.$$ 
+ </details>
+</li>
+<li><p>$\dfrac{3s^2-4s+5}{(s-1)(s^2+1)}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $s^2+1$ is irreducible quadratic, so requires a linear numerator):
+ $$\dfrac{3s^2-4s+5}{(s-1)(s^2+1)} = \dfrac{A}{s-1} + \dfrac{Bs+C}{s^2+1} .$$
+ Multiplying by the original denominator yields 
+ $$3s^2-4s+5 = (s-1)(s^2+1)\left[ \dfrac{A}{s-1} + \dfrac{Bs+C}{s^2+1} \right] = A(s^2+1)+(Bs+C)(s-1).$$
+ Grouping like terms yields
+ \begin{align*}
+ 3s^2-4s+5 &amp;= As^2+A+Bs^2-Bs+Cs-C = (A+B)s^2+(-B+C)s+(-C).
+ \end{align*}
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 3, \\ -B + C &amp;= -4, \\ A-C &amp;= 5. \end{array} \right. $$
+ Adding the first equation to the second (to cancel the $B$'s) yields $A+C = -1$, and then adding this to the third equation (to cancel the $C$'s) yields $2A = 4$, so $A=2$.  Then the first equation yields $B=1$ and the third yields $C=-3$.  We then have
+ $$\dfrac{3s^2-4s+5}{(s-1)(s^2+1)} = \boxed{ \frac{2}{s-1} + \frac{s-3}{s^2+1}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{1}{s(s-1)^3}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the linear factor $s-1$ has multiplicity 3, so we "work our way up to the multiplicity"):
+ $$\dfrac{1}{s(s-1)^3}$= \dfrac{A}{s} + \dfrac{B}{s-1} + \dfrac{C}{(s-1)^2} + \dfrac{D}{(s-1)^3}.$$
+ Multiplying by the original denominator yields 
+ $$1 = s(s-1)^3\left[ \dfrac{A}{s} + \dfrac{B}{s-1} + \dfrac{C}{(s-1)^2} + \dfrac{D}{(s-1)^3}\right] = A(s-1)^3 + Bs(s-1)^2 + Cs(s-1) + Ds.$$
+ Expanding and grouping like terms yields
+ \begin{align*}
+ 0s^3 + 0s^2 + 0s + 1 &amp;= A(s^3 -3s^2 + 3s + -1) + B(s^3 -2s^2 + s) + C(s^2-s) + Ds\\
+ &amp;= (A+B)s^3 + (-3A -2B + C)s^2 + (3A+B-C+D)s +(-A).
+ \end{align*}
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+B &amp;= 0, \\ -3A -2B + C &amp;= 0, \\ 3A+B-C +D&amp;= 0, \\ -A &amp;= 1. \end{array} \right. $$
+ The fourth equation yields $A=-1$, then the first yields $B=1$.  Then the second yields $C=-1$, and the third yields $D=1$.  We then have
+ $$ \dfrac{1}{s(s-1)^3}=\boxed{\frac{-1}{s} + \frac{1}{s-1} - \frac{1}{(s-1)^2} + \frac{1}{(s-1)^3}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{2s+2}{s^3+16s}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $s^2+16$ is irreducible quadratic, so requires a linear numerator):
+ $$\dfrac{2s+2}{s(s^2+16)}$= \dfrac{A}{s} + \dfrac{Bs+C}{s^2+16} .$$
+ Multiplying by the original denominator yields 
+ $$2s+2 = s(s^2+16)\left[ \dfrac{A}{s} + \dfrac{Bs+C}{s^2+16} \right] = A(s^2+16) + (Bs+C)s= (A+B)s^2+Cs+16A.$$
+ Matching coefficients yields the system of equations
+ $$ \left\{   \begin{array}{cc} A+B &amp;=0 \\ C &amp;= 2 \\ 16A &amp;= 2 \end{array}\right.$$
+ from which we obtain $A=1/8, B=-1/8$, and $C = 2$.  Then we have
+ $$ \frac{2s+2}{s^3+16s}=\boxed{ \frac{1/8}{s} + \frac{-s/8 + 2}{s^2+16}}.$$ 
+ </details>
+</li>
+<li><p>$\dfrac{s+1}{s^3-2s^2+s}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $s-1$ has multiplicity 2, so we "work our way up to the multiplicity"):
+ $$\dfrac{s+1}{s(s^2-2s+1} = \frac{s+1}{s(s-1)^2} = \dfrac{A}{s} + \frac{B}{s-1}+\frac{C}{(s-1)^2} .$$
+ Multiplying by the original denominator yields 
+ \begin{align*}
+ s^2 +1s+1 &amp;= s(s-1)^2 \left[ \dfrac{A}{s} + \dfrac{B}{s-1} + \frac{C}{(s-1)^2} \right]\\
+ &amp;= A(s-1)^2 + Bs(s-1) + Cs\\
+ &amp;= A(s^2-2s+1) +B(s^2-s) + C \\
+ &amp;= (A+B)s^2 + (-2A-B+C)s+A.
+ \end{align*}
+ Matching coefficients gives us the system of equations
+ \begin{align*}
+ \left\{ \begin{array}{cc} A + B &amp;= 0 \\ -2A -B + C &amp;= 1 \\ A &amp;= 1 \end{array}\right.
+ \end{align*}
+ The first equation gives $B=-1$ and the second equation then gives $C=2$.  Therefore, we have
+ $$\dfrac{s+1}{s^3-2s^2+s}= \boxed{\frac{1}{s} - \frac{1}{s-1} + \frac{2}{(s-1)^2}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{2s+2}{s^2+6s+9}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $s+3$ has multiplicity 2, so we "work our way up to the multiplicity"):
+ $$\dfrac{2s+2}{(s+3)^2}= \dfrac{A}{s+3} + \frac{B}{(s+3)^2} .$$
+ Multiplying by the original denominator yields 
+ $$2s+2 = (s+3)^2 \left[ \dfrac{A}{s+3} + \dfrac{B}{(s+3)^2} \right] = A(s+3) + B= As+(3A+B).$$
+ Matching coefficients yields the system of equations
+ $$ \left\{   \begin{array}{cc} A &amp;=2 \\ 3A+B &amp;= 2 \end{array}\right.$$
+ from which we obtain $A=2, B=-4$.  Therefore,
+ $$\frac{2s+2}{s^2+6s+9}~dx =\boxed{ \frac{2}{s+3} - \frac{4}{(s+3)^2}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{13s + 13}{(s+2)(s^2+9)}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $(s^2+9)$ is irreducible quadratic and requires a linear numerator):
+ $$\dfrac{13s + 13}{(s+2)(s^2+9)}= \dfrac{A}{s+2} + \frac{Bs+C}{s^2+9}.$$
+ Multiplying by the original denominator yields
+ \begin{align*}
+ 13s+13&amp;= (s+2)(s^2+9) \left[ \dfrac{A}{s+2} + \dfrac{Bs+C}{s^2+9}  \right]\\
+     &amp;= A(s^2+9) + (Bs+C)(s+2) \\
+     &amp;= As^2+9A+Bs^2+2Bs+Cs+2C.
+ \end{align*}
+ Matching coefficients yields
+ $$ \left\{\begin{array}{cc} A+B &amp;=0 \\ 2B+C &amp;= 13 \\ 9A + 2C &amp;= 13 \end{array} \right. $$
+ The first equation says $A=-B$, which substituting into the second and third gives
+ \begin{align*}
+ 2B + C &amp;= 13 \\ -9B + 2C &amp;= 13.
+ \end{align*}
+ Subtracting 2 times the first equation from the second (to eliminate $C$) yields $-13B = -13$, and so $B=1$, which then gives $C=11$ and $A=-1$.  Then we have
+ $$\frac{13s + 13}{(s+2)(s^2+9)} ~dx = \boxed{\frac{-1}{s+2} + \frac{ s + 11}{s^2 +9}}.$$
+ </details>
+</li>
+<li><p>$\dfrac{3s-7}{(s-4)^2(s^2+4)}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+ We set up a partial fraction decomposition (the factor $s-4$ has multiplicity 2, so we "work our way up to the multiplicity", and the factor $(s^2+4)$ is irreducible quadratic and requires a linear numerator):
+ $$\dfrac{3s-7}{(s-4)^2(s^2+4)}= \dfrac{A}{s-4} + \frac{B}{(s-4)^2}+\dfrac{Cs+D}{s^2+4}.$$
+ Multiplying by the original denominator yields
+ \begin{align*}
+ 3s-7&amp;= (s-4)^2(s^2+4) \left[ \dfrac{A}{s-4} + \dfrac{B}{(s-4)^2} +\frac{Cs+D}{s^2+4} \right]\\
+     &amp;= A(s-4)(s^2+4) + B(s^2+4) + (Cs+D)(s-4)^2 \\
+     &amp;= A(s^3-4s^2+4s-16)+B(s^2+4)+(Cs+D)(s^2-8s+16).
+ \end{align*}
+ Then,
+ $$3s-7 = A(s^3-4s^2+4s-16)+B(s^2+4)+Cs^3-8Cs^2+16Cs+Ds^2-8Ds+16D = (A+C)s^3+(-4A+B-8C+D)s^2+(4A+16C-8D)s + (-16A+16D).$$
+ Matching coefficients yields the system of equations
+ $$ \left\{ \begin{array}{rl} A+C&amp;= 0, \\ -4A + B - 8C + D &amp;= 0, \\ 4A+16C-8D &amp;= 3, \\ -16A + 4B+ 16D &amp;= -7. \end{array} \right. $$
+ The first equation yields $C=-A$ and therefore the second, third, and fourth become
+ $$ \left\{ \begin{array}{rl} 4A + B + D &amp;= 0, \\ -12A -8D &amp;= 3, \\ -16A+4B + 16D &amp;= -7. \end{array} \right. $$
+ This first equation yields $B=-4A-D$ and the rest yield
+ $$ \left\{ \begin{array}{rl} -12A-8D&amp;=3, \\ -16A-16A-4D+16D&amp;=-7, \end{array} \right.\implies \left\{\begin{array}{rl} -12A-8D&amp;=3, \\ -32A+12D&amp;=-7, \end{array} \right.$$
+ Three times this first equation plus two times the second (to cancel the $D$'s) yield
+ $$ -36A - 64A = -5 \implies A = \frac{1}{20}.$$
+ Then,
+ $$ -\frac{12}{20} -8D = 3 \implies -8D = \frac{18}{5} \implies D = -\frac{9}{20}.$$
+ Then, 
+ $$B = -4A - D = -\frac{4}{20}+\frac{9}{20} = - \frac 1 4,$$
+ and 
+ $$ C = -A = -\frac{1}{20}.$$
+ Therefore, we have
+ $$\dfrac{3s-7}{(s-4)^2(s^2+4)}= \boxed{\frac{1/20}{s-4} - \frac{1/4}{(s-4)^2} + \frac{(-1/20)s-(9/20)}{s^2+4}}.$$
+ </details>
+</li>
 </ol>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs" id="cell-id=24571ae9-d656-4844-9e35-26c33b568d3f">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
-</div>
 </div>
 </div>
 </div>
