@@ -3,7 +3,7 @@
 <html lang="en">
 <head><meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>251-fa25-f-s</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
+<title>251-sp25-f-s</title><script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.1.10/require.min.js"></script>
 <style type="text/css">
     pre { line-height: 125%; }
 td.linenos .normal { color: inherit; background-color: transparent; padding-left: 5px; padding-right: 5px; }
@@ -7492,251 +7492,251 @@ MathJax = {
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h1 id="Math-251-Fall-25-Final-Exam-Sample">Math 251 Fall 25 Final Exam Sample<a class="anchor-link" href="#Math-251-Fall-25-Final-Exam-Sample">¶</a></h1><h1 id="1">1<a class="anchor-link" href="#1">¶</a></h1><h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Find the position function $x(t)$ of a moving partical with the given acceleration $a(t)$, initial position $x_0 = x(0)$, and initial velocity $v_0 = v(0)$:
-$$ a(t) = 13, \quad v_0 = 7, \quad x_0 = -9.$$</p>
+<h1 id="Math-251-Spring-25-Final-Exam-Sample">Math 251 Spring 25 Final Exam Sample<a class="anchor-link" href="#Math-251-Spring-25-Final-Exam-Sample">¶</a></h1><h1 id="1">1<a class="anchor-link" href="#1">¶</a></h1><p>True/False:</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>The ODE $y' + \dfrac{3}{2y}= 8t+5$ is linear.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      Since $a(t) = \dfrac{dv}{dt}$ doesn't depend on the dependent variable $v$, we can directly integrate:
-      $$\frac{dv}{dt} = 13 \implies v = 13t + C \overset{v(0) = 7}{\implies} v=13t + 7.$$
-      Then, as $\dfrac{dx}{dt} = v$ we can integrate again to find $x(t)$:
-      $$\frac{dx}{dt} = 13t + 7 \implies x = \frac{13}{2}t^2 + 7t + C \overset{x(0) = -9}{\implies} \boxed{x(t) = \frac{13}{2} t^2 + 7t - 9}.$$
+      $\boxed{\text{False}}.$  We cannot write this in the form
+      $$\dfrac{dy}{dt} + P(t) y = Q(t).$$
     </details>
-<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>A tank initially contains 100 liters of water polluted with 2 grams of deadly mercury (Hg).  Fluid which contains 1 gram/liter of Hg is pumped into the tank  at a rate of 7 liters/min. As the incoming fluid enters the tank, it is perfectly mixed with the fluid in the tank, and then pumped out of the tank at a rate of 3 liters/min.  Write an IVP (ODE and initial condition) for the amount $A(t)$ of Hg in the tank, <b> but do not solve the IVP</b>.</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>If $g(x)$ is a solution to the ODE $y' = 2xy-x^2$, then the slope of the tangent line to the graph of $g(x)$ at the point $(x,y)$ is given by the formula $2xy-x^2$.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      Amount flow rates (g/min) are obtained by multipliying concentrartions (g/L) by volume flow rates (L/min).<br/>
-      The incoming concentration is $1$ g/L, and the incoming flow rate is $7$ L/min.<br/>
-      The outgoing concentration is the tank concentration $\dfrac{A(t)}{V(t)}$ g/L (where $V(t)$ is the amount of fluid in the tank at time $t$, and the outgoing flow rate is $3$ L/min.
-      The amount of fluid starts at $V(0) = 100$, and increases at a constant rate of 4 L/min (since 7 L/min enters and only 3 L/min leaves).  Therefore, $V(t) = 100 + 4t$.
-      Therefore, thinking "rate in minus rate out" we obtain
-      $$\dfrac{dA}{dt} = 1 \cdot 7 - \dfrac{A}{100+4t}\cdot 3,$$
-      and along with the initial condition $A(0) = 2$ (be careful, this needs to be the initial amount, not the initial volume!) we have
-      $$\boxed{A(t) = 7-\dfrac{3A}{100+4t}, \quad A(0) = 2}.$$
+      $\boxed{\text{True}}.$ A first order ODE is just a rule for the slope of the solution, $y'$, passing through the point $(x,y)$.
+    </details>
+<h2 id="c)">c)<a class="anchor-link" href="#c)">¶</a></h2><p>The ODE below has infinitely many constant solutions.
+$$ y'y -\dfrac{\sin(t)}{\cos(y')} = 1$$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      $\boxed{\text{False}}.$ Constant solutions satisfy $y' = 0$, and ODE solutions must be true for an interval of the indepedent variable $t$.  Therefore, we'd need values of $y$ that make
+      $$0 y - \dfrac{\sin(t)}{\cos(0)} = -\sin(t) = 1$$
+      for an interval of $t$, which is impossible.  Therefore, this ODE has no constant solutions.
+    </details>
+<h2 id="d)">d)<a class="anchor-link" href="#d)">¶</a></h2><p>$P'(t) = 3P(7-P)$ is a separable ODE.</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      $\boxed{\text{True}}.$  We could proceed with
+      $$\int \dfrac{1}{P(7-P)} \, dP = \int 3 \, dt.$$
+    </details>
+<h2 id="e)">e)<a class="anchor-link" href="#e)">¶</a></h2><p>If $y_1$ and $y_2$ are solutions to the ODE below, then $(y_1-y_2)$ is also a solution.
+$$y''-3y'-10y = \sin(t)$$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      $\boxed{\text{False}}.$ This is the principle of superposition, and holds for linear <b>homogeneous</b> ODE.  Notice that
+      $$y_1''-3y_1'-10y_1 = \sin(t)$$
+      and
+      $$y_2''-3y_2'-10y_2 = \sin(t)$$
+      imply that
+      $$(y_1-y_2)'' - 3(y_1-y_2)' -10(y_1-y_2) = \cdots = y_1''-3y_1'-10y_1' - (y_2''-3y_2'-10y_2) = \sin(t) - \sin(t) = 0,$$
+      so instead we'd have $(y_1-y_2)$ solves the ODE
+      $$y''-3y'-10y = 0.$$
     </details>
 <h1 id="2">2<a class="anchor-link" href="#2">¶</a></h1><p>For each part, write an ODE, but <b> do not solve the ODE</b>.</p>
-<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>A function $g(t)$ has the property that the line tangent to the graph of $g$ at the point $(t,y)$ passes through the point $(t+y, y+1)$.  Write a differential equation for an unknown function $y(t)$ having the function $g(t)$ as its solution or one of its solutions.</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>A function $g(t)$ has the property that the line tangent to the graph of $g$ at the point $(t,y)$ passes through the point $(-y,t)$.  Write a differential equation for an unknown function $y(t)$ having the function $g(t)$ as its solution or one of its solutions.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      We need to prescribe the slope $\dfrac{dy}{dt}$ of the solution through the point $(t,y)$.  The slope between $(t,y)$ and $(t+y,y+1)$ is given by
-      $$\dfrac{dy}{dt} = \dfrac{\Delta y}{\Delta t} = \dfrac{(y+1)-y}{(t+y)-t} = \dfrac{1}{y},$$
+      We need to prescribe the slope $\dfrac{dy}{dt}$ of the solution through the point $(t,y)$.  The slope between $(t,y)$ and $(-y,t)$ is given by
+      $$\dfrac{dy}{dt} = \dfrac{\Delta y}{\Delta t} = \dfrac{t-y}{-y-t} = \dfrac{t-y}{-y-t},$$
      and so we have
-      $$\boxed{\dfrac{dy}{dt} = \dfrac{1}{y} }.$$
+      $$\boxed{\dfrac{dy}{dt} = \dfrac{t-y}{-y-t} }.$$
     </details>
-<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Suppose a boat moves through the water an the engine suddenly stops (at time $t=0$).  The boat continues to coast but slows from the resistive force of the water, which at any time $t \geq 0$ is proportional to the square of the velocity of the boat.  If the boat was moving at a velocity of 15 km/hour when the engine stopped, write an <b> ODE and initial condition</b> for the velocity of the boat for all $t \geq 0$.</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Suppose a boat moves through the water an the engine suddenly stops (at time $t=0$).  The boat continues to coast but slows from the resistive force of the water, which at any time $t \geq 0$ is proportional to the square root of the velocity of the boat.  If the boat was moving at a velocity of 35 km/hour when the engine stopped, write an <b> ODE and initial condition</b> for the velocity of the boat for all $t \geq 0$.</p>
 <p>If you use a constant in your ODE you m ust identify whether it is positive or negative.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       Since $ma=F$, $a = \dfrac{dv}{dt}$ is proportional to the force (just include the unspecified mass in the constant of proportionality).  Assume the boat is initially moving with positive velocity, so that the force acts to slow the boat down and make $v(t)&gt;0$ decrease towards zero.  Therefore, we can set up 
-      $$\boxed{\dfrac{dv}{dt} = -kv^2, \quad k &gt; 0, \quad v(0) = 15}.$$
+      $$\boxed{\dfrac{dv}{dt} = -k\sqrt{v}, \quad k &gt; 0, \quad v(0) = 35}.$$
       Alternatively, you could've done
-      $$\dfrac{dv}{dt} = kv^2, \quad k &lt; 0, \quad v(0) = 15.$$
-      </details>
+      $$\dfrac{dv}{dt} = k\sqrt{v}, \quad k &lt; 0, \quad v(0) = 35.$$                                                     </details>
 <h1 id="3">3<a class="anchor-link" href="#3">¶</a></h1><p>Solve the IVP explicity for $y(t)$:
-$$2yy' = 2t \ln(t^2+1), \qquad y(0) = -7.$$</p>
+$$2yy' =  \dfrac{2t}{t^2+1}, \qquad y(0) = -3.$$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       This ODE is separable, so we proceed with
-      $$\int 2y \, dy = \int 2t \ln(t^2+1) \, dt.$$
-      For the $t$ integral, we can substitute $w=t^2+1, dw = 2t \, dt$, then integrate by parts:
-      $$ y^2 = \int \underbrace{\ln w}_{u} \, \underbrace{dw}_{dv} = \underbrace{w}_{v} \underbrace{\ln w}_{u} - \int \underbrace{w}_{v} \underbrace{ \frac 1 w \, dw}_{du} = w \ln w - \int 1 \, dw = w \ln w - w + C .$$
-      Then, $w = t^2+1$ so we have
-      $$y^2 = (t^2+1)\ln(t^2+1) - (t^2 + 1) + C \implies y = \pm \sqrt{(t^2+1)\ln(t^2+1) - (t^2 + 1) + C}.$$
-      The initial condition $y(0) = -7$ means it must be the minus choice, with
-      $$-7 = - \sqrt{\ln 0 - 1 + C} \implies C-1 = 49 \implies C = 50,$$
+      $$\int 2y\, dy = \int \frac{2t}{t^2+1} \, dt.$$
+      For the $t$ integral, we can substitute $w=t^2+1, dw = 2t \, dt$ to obtain
+      $$ y^2 = \int \frac 1 w \, dw = \ln|w| + C = \ln(t^2+1)+C .$$
+      Then,
+      $$ y = \pm \sqrt{\ln(t^2+1)+C}.$$
+      The initial condition $y(0) = -3$ means it must be the minus choice, with
+      $$-3 = - \sqrt{\ln 0  + C} \implies C = 9,$$
       and so
-      $$ \boxed{ y = -\sqrt{(t^2+1)\ln(t^2+1) - (t^2+1) + 50}=-\sqrt{(t^2+1)\ln(t^2+1) -t^2 + 49}}.$$
-      </details>
-<h1 id="4">4<a class="anchor-link" href="#4">¶</a></h1><p>Suppose that the position of a mass, $x(t)$, in a mass-spring-dashpot system is modeled by the ODE below and is set in motion (at $t=0$) with $x(0) = 3$ and $x'(0) = 0$.  When $x(t)&gt;0$ the spring is stretched, and the spring is compressed when $x(t) &lt; 0$, and $x=0$ represents the "equilibrium position".
-$$x'' + 5x' + 4x = 0.$$</p>
-<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Find the position for all $ t\geq 0$.</p>
+      $$ \boxed{ y = -\sqrt{\ln(t^2+1) +9}}.$$
+    </details>
+<h1 id="4">4<a class="anchor-link" href="#4">¶</a></h1><p>Suppose the population of giraffes in your zoo is given by $P(t)$ and obeys the ODE
+$$P' = P(P-15).$$
+You currently have 7 giraffes in your zoo.  Jack is willing to sell you another 7 giraffes for $\$7000$.  Jill is willing to sell you 10 more giraffes for $\$10000$.</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Find all the critical points (same as constant solutions or equilibrium solutions) and determine their stability.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      The characteristic polynomial is
-      $$r^2 + 5r + 4 = 0 \implies (r+4)(r+1) = 0 \implies r = -4, -1,$$
-      and so
-      $$x(t) = c_1e^{-4t} + c_2 e^{-t}, \qquad x'(t) = -4c_1 e^{-4t} - c_2e^{-t}.$$
-      Then, the initial conditions yield
-      $$3 = c_1 + c_2, \qquad 0 = -4c_1 - c_2.$$
-      Adding the equations yields $3 = -3c_1$ and so $c_1 = -1$ and therefore $c_2 = 3 - c_1 = 4$, leading to
-      $$\boxed{x(t) = -e^{-4t} + 4e^{-t}}.$$
+      We see $P' = 0$ for $P=0, 15$.<br/>
+      Since $P' = P^2 - 15P$ is a quadratic function of $P$ with positive leading coefficient, the signs must be $(+)(-)(+)$.<br/>
+      Since $P'$ is changing from $(+)$ to $(-)$ as $P$ increases through $0$, we have $\boxed{P=0 \text{ is stable}}$.<br/>
+      Since $P'$ is changing from $(-)$ to $(+)$ as $P$ increases through $15$, we have $\boxed{P=15 \text{ is unstable}}$.
     </details>
-<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Does this mass ever pass through the equilibrium position? If so, when?</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>In order to get your giraffe population to grow, do you need to buy more giraffes? If so, who should you buy from in order to spend as little money as possible? Justify your answer mathematically.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      Setting $x(t) = 0$ yields
-      \begin{align*}
-      0 &amp;= -e^{-4t} + 4e^{-t},\\
-      e^{-4t} &amp;= 4e^{-t},\\
-      e^{-4t} \cdot e^t &amp;= 4e^{-t} \cdot e^t,\\
-      e^{-3t} &amp;= 4,\\
-      -3t &amp;= \ln 4,\\
-      t &amp;= - \frac 1 3 \underbrace{\ln 4}_{&gt;0} &lt; 0
-      \end{align*}
-      and so the mass $\boxed{\text{does not pass through equilibrium for }t \geq 0}$.  (Remember $\ln x &gt; 0$ for $x&gt;1$ and $\ln x &lt; 0$ for $0 &lt; x &lt; 1$, along with $\ln 1 = 0$ and $\ln x$ is undefiend for $x \leq 0$.)
+      The only positive values of $P$ for which $P'&gt;0$ are $P&gt;15$.  Therefore, if we bought Jack's giraffes we would only have 14, and if $P = 14$ then $P(t)$ will decreases to 0.<br/>
+      However, if we buy $\boxed{\text{Jill's giraffes}}$ then we'd have $17 &gt; 15,$ and the population would increase.
     </details>
-<h2 id="c)">c)<a class="anchor-link" href="#c)">¶</a></h2><p>Is the motion of the mass perioidic? If so, determine the period.</p>
+<h1 id="5">5<a class="anchor-link" href="#5">¶</a></h1><p>Supppose a mass-spring-dashpot system is <br/>critically damped, so that the roots of the characteristic equation of the ODE for the position function $x(t)$ are equal: $r_1 = r_2$. Assume that the mass begins moving at time $t=0$.</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Write down the general solution to the ODE in terms of $r_1$ (or $r_2$, since $r_1 = r_2$), using $c_1$ and $c_2$ for the unknown constants in the general solution.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      No, the motion is $\boxed{\text{not periodic}}$.  Remember, undamped motion is periodic, while underdamped is "pseudoperiodic" due to the exponentially decaying time-varying amplitude.  Critically damped and overdamped (this is overdamped) are neither perioidic nor pseudoperiodic.
+      We have (let $r = r_1 = r_2$)
+      $$\boxed{x(t) = c_1 e^{rt} + c_2 te^{rt}.$$
     </details>
-<h1 id="5">5<a class="anchor-link" href="#5">¶</a></h1><p>Find the general solution to the system
-$$ \mathbf{x}' = \left[ \begin{matrix} -5 &amp; -4 \\ 3 &amp; 2 \end{matrix} \right] \mathbf{x}.$$</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Show that the mass can pass through the equilibrium position <b>at most </b> one time.  You must explain your answer.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      The eigenvalues are given by
-      $$0 = (-5-\lambda)(2-\lambda) - (-4)(3) = (\lambda^2+5\lambda-2\lambda-10)+12 = \lambda^2 + 3\lambda + 2 = (\lambda+1)(\lambda+2),$$
-      and so the eigenvalues are $\lambda_1 = -1, \lambda_2 = -2$.<br/>
-      For $\lambda_1 = -1$, we set up $(\mathbf{A} - (-1)\mathbf{I})\mathbf{v}_1 = \mathbf{0}$:
-      $$ \left[ \begin{matrix} -4 &amp; -4 \\ 3 &amp; 3 \end{matrix} \right] \left[ \begin{matrix} A \\ B \end{matrix} \right] = \left[ \begin{matrix} 0 \\ 0 \end{matrix} \right],$$
-      and so $\mathbf{v}_1 = \left[ \begin{matrix} 1 \\ -1 \end{matrix} \right]$ works.<br/>
-      For $\lambda_2 = -2$, we set up $(\mathbf{A} - (-2)\mathbf{I})\mathbf{v}_1 = \mathbf{0}$:
-      $$ \left[ \begin{matrix} -3 &amp; -4 \\ 3 &amp; 4 \end{matrix} \right] \left[ \begin{matrix} A \\ B \end{matrix} \right] = \left[ \begin{matrix} 0 \\ 0 \end{matrix} \right],$$
-      and so $\mathbf{v}_2 = \left[ \begin{matrix} 4 \\ -3 \end{matrix} \right]$ works.<br/>
-      Therefore, the general solution is
-      $$\boxed{ \mathbf{x}(t) = c_1 e^{\lambda_1 t}\mathbf{v}_1 + c_2 e^{\lambda_2 t}\mathbf{v}_2 = c_1 e^{-t} \left[ \begin{matrix} 1 \\ -1 \end{matrix} \right] + c_2 e^{-2t} \left[ \begin{matrix} 4 \\ -3 \end{matrix} \right]}.$$
+      Case 1: If both $c_1 = c_2 = 0,$ then the mass is at equilibrium for all times and never passes through.<br/>
+      Case 2: If $c_2 = 0$ and $c_1 \neq 0$, then $x(t) = c_1 e^{rt} \neq 0$ for all $t$, and so never passes through equilibrium.<br/>
+      Case 3: If $c_2 \neq 0$, then 
+      $$x(t) = 0 \implies \underbrace{e^{rt}}_{&gt;0}(c_1 + c_2t) = 0 \implies t = -\frac{c_1}{c_2}.$$
+      Case 3a: If $c_1, c_2$ have the same sign, then $x(t) \neq 0$ for all $ t \geq 0$.  If $c_1 = 0$, then $x(t) = 0$ only at the initial time and so will never <b>pass through </b> equilibrium (since it starts moving at $t=0$).  <br/>
+      Case 3b: If $c_1, c_2$ have opposite signs, then there is a single positive time at which $x(t) = 0$, which is when the pass will pass through equilibrium.
     </details>
-<h1 id="6">6<a class="anchor-link" href="#6">¶</a></h1><p>Compute the inverse Laplace transforms below.</p>
-<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>$\mathcal{L}^{-1} \left\{ \dfrac{e^{-2s}}{s^2+4s+13} \right\}$</p>
+<h1 id="6">6<a class="anchor-link" href="#6">¶</a></h1><p>Suppose a mass-spring system is described by the ODE and initial conditions
+$$ x'' + 4x = 0, \qquad x(0) = 1, x'(0) = 0.$$</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Solve the IVP for the position function $x(t)$.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      The denominator can't be factored with real numbers, since we can complete the square and see
-      $$s^2 + 4s + 13 = (s^2 + 4s + 4) + 9 = (s+2)^2 + 9$$
-      is not zero for any real values.  We use the table entry
-      $$\mathcal{L}^{-1} \{e^{-as} F(s) \} = u(t-a)f(t-a)$$
-      with $a=2$ and $F(s) = \dfrac{1}{(s+2)^2 + 9}.$  To compute $f(t)$, we use the table entry
-      $$\mathcal{L}^{-1} \left\{\dfrac{k}{(s-a)^2 + k^2}\right\} = e^{at} \sin(kt)$$
-      with $a=-2$ and $k=3$.  Adjusting the constant factor yields
-      $$f(t) = \mathcal{L}^{-1}\{F(s)\} = \mathcal{L}^{-1} \left\{\dfrac 1 3 \cdot \dfrac{3}{(s+2)^2 + 3^2}\right\} = \dfrac 1 3 e^{-2t} \sin(3t),$$ leading to
-      $$\boxed{u(t-2)\dfrac 1 3 e^{-2(t-2)} \sin[3(t-2)]}.$$
+      This undamped system has polynomial
+      $$r^2 + 4 = 0 \implies r^2 = -4 \implies r = \pm 2i,$$
+      and so 
+      $$x(t) = c_1 \cos(2t) + c_2 \sin(2t), \qquad x'(t) = -2c_1 \sin(2t) + 2c_2 \cos(2t).$$
+      The condition $x(0) = 1$ means $c_1 = 1$, and $x'(0) = 0$ means $c_2 = 0$.  Therefore,
+      $$\boxed{x(t) = \cos(2t)}.$$
     </details>
-<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>$\mathcal{L}^{-1} \left\{ \dfrac{e^{-2s}}{s-2\pi} + \dfrac{s}{s^2+9\pi^2} \right\}$</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>How far from equilibrium will the mass get?</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      By linearity, we have
-      $$\mathcal{L}^{-1} \left\{ e^{-2s} \dfrac{1}{s-2\pi} \right\} + \mathcal{L}^{-1} \left\{ \dfrac{s}{s^2 + 9\pi^2}\right\}.$$
-      The second term becomes $\cos(3\pi t)$ using the table entry for $\cos(kt)$.<br/>
-      For the first term,  we use the table entry
-      $$\mathcal{L}^{-1} \{e^{-as} F(s) \} = u(t-a)f(t-a)$$
-      with $a=2$ and $F(s) = \dfrac{1}{s-2\pi}.$  To compute $f(t)$, we use the table entry
-      $$\mathcal{L}^{-1} \left\{\dfrac{1}{s-a}\right\} = e^{at} \implies \mathcal{L}^{-1} \left\{\dfrac{1}{s-2 \pi}\right\} = e^{2 \pi t}  $$
-      leading to the final answer
-      $$\boxed{ u(t-2) e^{2\pi(t-2)} + \cos(3 \pi t)}.$$
+      $\cos(2t)$ oscillates between $\pm 1$, and so the mass will travel a maximum distance of $\boxed{1}$ from equilibrium.
     </details>
-<h1 id="7">7<a class="anchor-link" href="#7">¶</a></h1><p>Use Laplace transforms to solve the IVP below.
-$$y''-3y'+2y= e^{-3t}u(t-4), \qquad y(0) = 0, y'(0) = 0.$$</p>
+<h2 id="c)">c)<a class="anchor-link" href="#c)">¶</a></h2><p>Will the mass move more slowly as it passes through equilibrium the 2nd time it passes through compared to the 1st time?</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      Transforming the equation (using the linearity property for terms and constant factors) yields
-      $$\mathcal{L}\{y''\} - 3\mathcal{L}\{ y'\} + 2 \mathcal{L}\{y\} = e^{-4s} \mathcal{L}\{ e^{-3(t+4)}\}.$$
-      We also used the fact (this is the one Laplace property I recomend you memorize since it's not quite in the table, but instead uses the $e^{-as}F(s) \rightarrow u(t-a)f(t-a)$ property in reverse)
-      $$\mathcal{L} \{u(t-a)f(t) \} = e^{-as} \mathcal{L}\{ f(t+a)\}.$$
-      Then, we use the exponential property $e^{-3(t+4)} = e^{-3t-12} = e^{-12} \cdot e^{-3t}$ and the linearity (constant factor) property to obtain (along with the table entries for derivatives and given intial conditions) to obtain
-      \begin{align*}
-      [s^2 Y(s) - sy(0) - y'(0)] - 3[sY(s) - y(0)] + 2Y(s) &amp;= e^{-12} e^{-4s} \mathcal{L} \{e^{-3t}\} , \\
-      s^2Y(s) - 3sY(s) + 2Y(s) &amp;= e^{-12} e^{-4s} \cdot \dfrac{1}{s+3}, \\
-      (s^2 -3s+2)Y(s) &amp;=  e^{-12} e^{-4s} \cdot \dfrac{1}{s+3}, \\
-      Y(s) &amp;= e^{-12} e^{-4s} \cdot \dfrac{1}{(s^2-3s+2)(s+3)}, \\
-      Y(s) &amp;= e^{-12} e^{-4s} \cdot \dfrac{1}{(s-1)(s-2)(s+3)}.
-      \end{align*}
-      We set up a partial fraction decomposition for the rational function factor --- remember you cannot do anything exponential like $e^{-4s}$ in partial fractions, it does not work! 
-      $$ \dfrac{1}{(s-1)(s-2)(s+3)} = \dfrac{A}{s-1} + \dfrac{B}{s-2} + \dfrac{C}{s+3},$$
-      and multiplying the original denominator yields
-      \begin{align*}
-      0s^2 + 0s + 1 &amp;= (s-1)(s-2)(s+3) \left[ \dfrac{A}{s-1} + \dfrac{B}{s-2} + \dfrac{C}{s+3}\right] \\
-      &amp;= A(s-2)(s+3) + B(s-1)(s+3) + C(s-1)(s-2) \\
-      &amp;= A(s^2+s-6) + B(s^2 +2s-3) + C(s^2-3s+2) \\
-      &amp;= (A+B+C)s^2 + (A+2B-3C)s + (-6A-3B+2C).
-     \end{align*}
-      Matching coefficients yields
-      $$\left\{ \begin{array}{rl} A + B + C &amp;= 0 \\ A+2B-3C &amp;= 0 \\ -6A - 3B + 2C &amp;= 1 \end{array} \right. .$$
-      Adding 3 times the first equation to the second (to cancel the $C$s) gives
-      $$ 4A + 5B = 0,$$
-      and subtracting 2 times the first equation from the third (to cancel the $C$s yields
-      $$-8A - 5B = 1.$$
-      Adding these yields $-4A = 1$, and so $A=-\frac 1 4$.  Then, $B = - \frac{4A}{5} = \frac 1 5,$ and $C = -A-B = \frac{1}{4} - \frac{1}{5} = \frac{1}{20}$ and so
-      $$Y(s) = e^{-12}e^{-4s} \left( -\dfrac{1/4}{s-1} + \dfrac{1/5}{s-2} +\dfrac{1/20}{s+3} \right).$$
-      We use the table entry 
-      $$\mathcal{L}^{-1} \{ e^{-as} F(s) \} = u(t-a)f(t-a)$$
-      with $a=4, F(s) = \left( -\dfrac{1/4}{s-1} + \dfrac{1/5}{s-2} +\dfrac{1/20}{s+3} \right)$.  Then,
-      $$f(t) = - \frac 1 4 e^t + \frac 1 5 e^{2t} + \frac{1}{20} e^{-3t},$$
-      and putting it together (with the $e^{-12}$ constant factor) yields
-      $$\boxed{ y(t) = e^{-12} u(t-4)\left( - \frac 1 4 e^{t-4} + \frac 1 5 e^{2(t-4)} + \frac{1}{20} e^{-3(t-4)}\right)}.$$
+      $\boxed{\text{No}}$. $x(t) = \cos(2t) = 0$ for $2t = \frac{\pi}{2}, \frac{3\pi}{2}, ...,$<br/> or for $t = \frac{\pi}{4}, \frac{3\pi}{4}, ... .$ <br/>
+      We since $x'(t) = 2 \sin(2t),$ we see the speeds $|x'(\pi/4)| = |x'(3\pi/4)| = 2$ are the same.
     </details>
-<h1 id="8">8<a class="anchor-link" href="#8">¶</a></h1><p>Use Laplace transforms to solve the IVP below.
-$$y''-2y'-8y = \delta(t-7), \qquad y(0) = 0, y'(0) = 0.$$</p>
+<h1 id="7">7<a class="anchor-link" href="#7">¶</a></h1><p>The linear system of ODEs below has two complex conjugate eigenvalues $\lambda = 1 \pm 3i$.  Solve the system with the given initial condition.
+$$ \mathbf{x}' = \left[ \begin{matrix} -2 &amp; 1 \\ -18 &amp; 4 \end{matrix} \right] \mathbf{x}, \qquad \mathbf{x}(0) = \left[ \begin{matrix} 1 \\ 6 \end{matrix} \right].$$
+You must write your answer as a single $2 \times 1$ matrix and simplify terms.</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      Since the eigenvalues are complex, we'll work with $\lambda = 1 + 3i$ and find its complex eigenvector $\mathbf{v}$, and the general solution will be
+    $$\mathbf{x}(t) = c_1 \text{Re}\{ e^{\lambda t} \mathbf{v}\} + c_2 \text{Im} \{ e^{\lambda t} \mathbf{v}\}.$$<br/><br/>
+    For $\lambda = 1+3i,$ we set up $(\mathbf{A} - (1+3i)\mathbf{I})\mathbf{v} = \mathbf{0}:$
+    $$ \left[ \begin{matrix} -2-(1+3i) &amp; 1 \\ -18 &amp; 4-(1+3i) \end{matrix} \right] \left[ \begin{matrix} A \\ B \end{matrix} \right] =\left[ \begin{matrix} -3-3i &amp; 1 \\ -18 &amp; 3-3i \end{matrix} \right] \left[ \begin{matrix} A \\ B \end{matrix} \right] =\left[ \begin{matrix} 0 \\ 0 \end{matrix} \right].$$
+    This leads to the system of equations
+    $$ \left\{ \begin{array}{rl} (-3-3i)A + B &amp;= 0 \\ -18A + (3-3i)B &amp;= 0 \end{array} \right. .$$
+    These equations will be redundant <br/>
+    (multiplying the first by $3-3i$ does yield the second since $$(-3i-3)(-3i+3) = (-3i)^2-3^2 = 9i^2-3^2 = -18)$$ and so the first says $B = (3+3i)A,$ and so $A=1, B=3+3i$ works.<br/><br/>
+    We work with
+    \begin{align*}
+    e^{(1+3i)t}\left[ \begin{matrix} 1 \\ 3 + 3i \end{matrix} \right] &amp;= e^{t+3it}\left[ \begin{matrix} 1 \\ 3 + 3i \end{matrix} \right] \\ \\
+    &amp;= e^te^{3it} \left[ \begin{matrix} 1 \\ 3 + 3i \end{matrix} \right] \\ \\
+    &amp;= e^t (\cos 3t + i \sin 3t) \left[ \begin{matrix} 1 \\ 3 + 3i \end{matrix} \right] \\ \\
+    &amp;= e^t \left[ \begin{matrix} \cos 3t + i \sin 3t \\ 3\cos 3t + 3i^2 \sin 3t + 3i \cos 3t + 3i \sin 3t \end{matrix} \right]\\ \\
+    &amp;=e^t \left[ \begin{matrix} \cos 3t + i \sin 3t \\ 3\cos 3t -3 \sin 3t + 3i \cos 3t + 3i \sin 3t \end{matrix} \right],
+    \end{align*}
+    and taking a linear combination of the real and imaginary parts yields the general solution
+    $$\mathbf{x}(t) = c_1 e^t \left[ \begin{matrix} \cos 3t \\ 3 \cos 3t - 3 \sin 3t \end{matrix} \right] + c_2 e^t \left[ \begin{matrix} \sin 3t \\ 3 \cos 3t + 3 \sin 3t \end{matrix} \right].$$
+    The initial condition yields
+    $$ \left[ \begin{matrix} 1 \\ 6 \end{matrix} \right] = c_1 \left[ \begin{matrix}1 \\ 3 \end{matrix} \right] + c_2  \left[ \begin{matrix} 0 \\ 3  \end{matrix} \right],$$
+    and so we see $c_1 = c_2 = 1$ works.  Therefore,
+    $$\boxed{\mathbf{x}(t) =  e^t \left[ \begin{matrix} \cos 3t \\ 3 \cos 3t - 3 \sin 3t \end{matrix} \right] + e^t \left[ \begin{matrix} \sin 3t \\ 3 \cos 3t + 3 \sin 3t \end{matrix} \right] = \left[ \begin{matrix} e^t \cos 3t + e^t \sin 3t \\ 6e^t \cos 3t\end{matrix} \right]}.$$
+    </details>
+<h1 id="8">8<a class="anchor-link" href="#8">¶</a></h1><p>Solve the IVP using Laplace transforms:</p>
+<p>$$y''-3y'+2y = \delta(t-7), \qquad y(0) = 0, y'(0) = 1.$$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       Using the linearity property, we have
-      $$\mathcal{L}\{y''\} - 2 \mathcal{L} \{y'\} -8 \mathcal{L}\{y\} = \mathcal{L} \{ \delta(t-7)\}.$$
+      $$\mathcal{L}\{y''\} - 3 \mathcal{L} \{y'\} +2 \mathcal{L}\{y\} = \mathcal{L} \{ \delta(t-7)\}.$$
       Using the table and initial conditions yields
       \begin{align*}
-      [s^2Y(s)-sy(0)-y'(0)] -2[sY(s)-y(0)] -8Y(s) &amp;= e^{-7s},\\
-      s^2Y(s)-2sY(s)-8Y(s)&amp;=e^{-7s},\\
-      (s^2-2s-8)Y(s) &amp;= e^{-7s},\\
-      Y(s) &amp;= e^{-7s} \cdot \dfrac{1}{s^2-2s-8},\\
-      Y(s) &amp;= e^{-7s} \cdot \dfrac{1}{(s-4)(s+2)}.
+      [s^2Y(s)-sy(0)-y'(0)] -3[sY(s)-y(0)] +2Y(s) &amp;= e^{-7s},\\
+      s^2Y(s)-1-3sY(s)+2Y(s)&amp;=e^{-7s},\\
+      (s^2-3s+2)Y(s) &amp;= 1+e^{-7s},\\
+      Y(s) &amp;= \dfrac{1}{s^2-3s+2} + e^{-7s} \cdot \dfrac{1}{s^2-3s+2},\\
+      Y(s) &amp;= \dfrac{1}{(s-1)(s-2)} + e^{-7s} \cdot \dfrac{1}{(s-1)(s-2)}.
       \end{align*}
-      We set up a partial fraction decomposition for the rational function factor --- remember you cannot do anything exponential like $e^{-7s}$ in partial fractions, it does not work! 
-      $$ \dfrac{1}{(s-4)(s+2)} = \dfrac{A}{s-4} + \dfrac{B}{s+2} ,$$
+      We set up a partial fraction decomposition for the rational function $\frac{1}{(s-1)(s-2)}$ --- remember you cannot do anything exponential like $e^{-7s}$ in partial fractions, it does not work! 
+      $$ \dfrac{1}{(s-1)(s-2)} = \dfrac{A}{s-1} + \dfrac{B}{s-2} ,$$
       and multiplying the original denominator yields
       \begin{align*}
-      0s + 1 &amp;= (s-4)(s+2) \left[\dfrac{A}{s-4} + \dfrac{B}{s+2} \right] \\
-      &amp;= A(s+2) + B(s-4) \\
-      &amp;= (A+B)s+(2A-4B).
+      0s + 1 &amp;= (s-1)(s-2) \left[\dfrac{A}{s-1} + \dfrac{B}{s-2} \right] \\
+      &amp;= A(s-2) + B(s-1) \\
+      &amp;= (A+B)s+(-2A-B).
      \end{align*}
       Matching coefficients yields
-      $$\left\{ \begin{array}{rl} A + B  &amp;= 0 \\ 2A-4B &amp;= 1 \end{array} \right. .$$
-      Adding 4 times the first equation to the second (to cancel the $B$s) yields
-      $$6A = 1 \implies A = \frac 1 6 \implies B = -\frac 1 6.$$
+      $$\left\{ \begin{array}{rl} A + B  &amp;= 0 \\ -2A-B &amp;= 1 \end{array} \right. .$$
+      Adding the first equation to the second (to cancel the $B$s) yields
+      $$-A = 1 \implies A = -1 \implies B = 1.$$
       Then,
-      $$Y(s) = e^{-7s} \left( \dfrac{1/6}{s-4} - \dfrac{1/6}{s+2}\right).$$
+      $$Y(s) = -\frac{1}{s-1} + \frac{1}{s-2} + e^{-7s} \left( -\frac{1}{s-1} + \frac{1}{s-2}\right).$$
       We use the table entry 
       $$\mathcal{L}^{-1} \{ e^{-as} F(s) \} = u(t-a)f(t-a)$$
-      with $a=7, F(s) = \left(\dfrac{1/6}{s-4} - \dfrac{1/6}{s+2} \right)$.  Then,
-      $$f(t) = \frac 1 6 e^{4t} - \frac 1 6 e^{-2t}$$
+      with $a=7, F(s) = \left( -\dfrac{1}{s-1} + \dfrac{1}{s-2} \right)$.  Then,
+      $$f(t) = -e^t + e^{2t}$$
       and putting it together yields
-      $$\boxed{y(t) = u(t-7)\left( \frac 1 6 e^{4(t-7)} - \frac 1 6 e^{-2(t-7)}\right)}.$$
+      $$\boxed{y(t) = -e^t + e^{2t} + u(t-7)[-e^{t-7}+e^{2(t-7)}]}.$$
     </details>
-<h1 id="9">9<a class="anchor-link" href="#9">¶</a></h1><h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Let $f(x)$ be an even function and suppose $f(x)$ is a continuous and perioidic function, with period $2\pi$.  Suppose also that $f'(x)$ is defined for all $x$ and is continuous. If a formula for the Fourier coefficients $a_n$ and $b_n$ given below can be used to correctly compute the Fourier coefficients of $f(x)$ fill in the circle for "yes", otherwise fill in the circle for "no".<br/><br/>
-$\displaystyle a_0 = \frac 2 \pi \int_{-\pi}^\pi f(x) \cos(nx) \, dx$
-<br/></p>
+<h1 id="9">9<a class="anchor-link" href="#9">¶</a></h1><p>Compute the following Laplace transforms or inverse Laplace transforms.</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>$\mathcal{L}\{ e^{2t}u(t-3)\}$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      $\boxed{\text{No}}.$ For the full $[-\pi,\pi]$ series, we have
-      $$a_0 = \dfrac{1}{\pi} \int_{-\pi}^\pi f(x) \, dx,$$
-      which we cannot expect to equal the given expression (it involves $n$ and the constant factor out front is not correct).
+       We'll need to use (this is the one Laplace property I recomend you memorize since it's not quite in the table, but instead uses the $e^{-as}F(s) \rightarrow u(t-a)f(t-a)$ property in reverse)
+      $$\mathcal{L} \{u(t-a)f(t) \} = e^{-as} \mathcal{L}\{ f(t+a)\}.$$
+      Therefore,
+      $$\mathcal{L}\{u(t-3)e^{2t}\} = e^{-3s} \mathcal{L} \{ e^{2(t+3)} \} = e^{-3s} \mathcal{L}\{ e^{2t+6}\} = e^{-3s} \mathcal{L} \{ e^{2t}\cdot e^6 \} = e^{-3s}e^6 \mathcal{L} \{e^{2t}\}$$
+      by the constant factor property.  Then, we use the usual table entry for $e^{2t}$ to obtain
+     $$\boxed{e^{-3s}e^6 \cdot \frac{1}{s-2} }.$$
     </details>
-<p>$\displaystyle a_n = \frac 2 \pi \int_{0}^\pi f(x) \cos(nx) \, dx$
-<br/></p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>$\mathcal{L}^{-1} \left\{ \dfrac{(4-s)e^{-2s}}{s^2+7}\right\}$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      $\boxed{\text{Yes}}.$ For the full $[-\pi,\pi]$ series, we have
-      $$a_n = \dfrac{1}{\pi} \int_{-\pi}^\pi f(x) \cos\left( \dfrac{n\pi x}{\pi}\right) \, dx= \dfrac{1}{\pi} \int_{-\pi}^\pi f(x) \cos(nx) \, dx.$$
-      Since $f(x)$ and $\cos(nx)$ are both even, the product $f(x)\cos(nx)$ is as well since $f(-x)\cos(-nx) = f(x) \cos(nx)$.  Therefore, the symmetric integral is twice the integral from $0$ to $\pi$:
-     $$a_n = \dfrac{2}{\pi} \int_{0}^\pi f(x) \cos(nx) \, dx.$$
+       We'll need to use 
+       $$ \mathcal{L}^{-1}\{e^{-as} F(s)\} = u(t-a)f(t-a).$$
+       Here, 
+       $$F(s) = \dfrac{4-s}{s^2+7} = \dfrac{4}{\sqrt{7}}\cdot \frac{\sqrt{7}}{s^2 + 7} - \frac{s}{s^2 + 7},$$
+       and so 
+       $$f(t) = \frac{4}{\sqrt{7}} \sin(\sqrt{7}t) - \cos(\sqrt{7}t)$$
+       (being careful with $\frac{k}{s^2 +k^2} \to \sin(kt)$ and adjusting the constant factor).  Therefore, we obtain
+       $$\boxed{u(t-2) \left[ \frac{4}{\sqrt{7}} \sin[\sqrt{7}(t-2)] - \cos[\sqrt{7}(t-2)]\right]}.$$
     </details>
-<p>$\displaystyle b_n = \frac 1 \pi \int_{-\pi}^\pi f(x) \sin(nx) \, dx$
-<br/></p>
+<h1 id="10">10<a class="anchor-link" href="#10">¶</a></h1><h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Consider the Fourier series of the ODD function $f(x) =-7x$ on the interval $[-L,L]$:
+$$f(x) = \dfrac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \dfrac{n \pi x}{L}\right) + \sum_{n=1}^\infty b_n \sin \left( \frac{n \pi x}{L} \right).$$</p>
+<p>Which <b>one</b> of the following statements about the coefficients is true?<br/><br/>
+I) $a_0 \neq 0$, at least some of the $b_n$ are not zero, but all the other $a_n$ = 0.<br/>
+II) At least some of the $b_n$ are not zero, but $a_0 = 0$ and all the other $a_n = 0$.<br/>
+III) At least some of the $b_n$ are not zero and at least some of the $a_n$ are not zero.<br/>
+IV) All $b_n$ are zero, and at least some of the $a_n$ will not be zero.<br/>
+V) None of the above.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      $\boxed{\text{Yes}}.$ For the full $[-\pi,\pi]$ series, we have
-      $$b_n = \dfrac{1}{\pi} \int_{-\pi}^\pi f(x) \sin\left( \dfrac{n\pi x}{\pi}\right) \, dx= \dfrac{1}{\pi} \int_{-\pi}^\pi f(x) \sin(nx) \, dx.$$
-      It turns out $b_n = 0$ for all $n \geq 1$, since the integrand is odd and the integral is symmetric: $f(-x)\sin(-nx) = f(x)[-\sin(nx)] = -f(x) \sin(nx)$ since $f(x)$ is even and $\sin(nx)$ is odd.
+      I) is false, since 
+      $$a_0 = \frac{1}{L} \int_{-L}^L (-7x) \, dx = 0,$$
+      since $-7x$ is odd and the interval is symmetric.<br/><br/>
+      $\boxed{\text{II) is true}}$.  We stated above that $a_0 = 0$, and
+      $$a_n = \frac 1 L \int_{-L}^L (-7x) \cos \left( \dfrac{n \pi x}{L} \right) \, dx = 0$$
+      since the integrand is even. (If $f(x)$ is odd and $g(x)$ is even, then $f(-x)g(-x) = -f(x)g(x)$ and so $f(x)g(x)$ is odd.  Above, $g(x) = \cos\left(\frac{n \pi x}{L}\right)$ is even.)  If all the $b_n$ were 0, then we'd have the zero function, and so some will not be zero.  (You could confirm this for yourself using the reference sheet integrals.)<br/><br/>
+      III) is false, since all of the $a_n = 0$ as explained above. <br/><br/>
+      IV) is similarly false, since all of the $a_n = 0$ as explained above.
     </details>
-<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Assume $u(x,t) = X(x)T(t)$ and separate the PDE below into ODEs for $X(x)$ and $T(t)$.
-$$ u^2 \frac{\partial u}{\partial x} = \frac{\partial^2 u}{\partial t^2}.$$</p>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Which is the general solution to the boundary value problem below:
+$$ 8u_{xx} = u_t, \quad 0 &lt; x &lt; 2\pi, t &gt; 0, \qquad u(0,t) = 0, u(2\pi,t) = 0$$
+I) $\displaystyle u(x,t) = c_0 + \sum_{n=1}^\infty c_n e^{-2n^2 t} \cos \left(\dfrac{n x}{2} \right)$ <br/>
+II) $\displaystyle u(x,t) =  \sum_{n=1}^\infty c_n e^{-n^2 t/2} \sin \left(\dfrac{n x}{4} \right)$ <br/>
+III) $\displaystyle u(x,t) =  \sum_{n=1}^\infty c_n e^{-8n^2 t} \cos \left(nx \right)$ <br/>
+IV) $\displaystyle u(x,t) =  \sum_{n=1}^\infty c_n e^{-2n^2 t} \sin \left(\dfrac{n x}{2} \right)$ <br/>
+V) $\displaystyle u(x,t) = c_0 + \sum_{n=1}^\infty c_n e^{n^2 t} \cos \left(\dfrac{n x}{4} \right)$</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
-      For $u(x,t) = X(x)T(t),$ we have
-      $$\frac{\partial u}{\partial x} = X'(x) T(t), \qquad \dfrac{\partial^2 u}{\partial t^2} = X(x)T''(t)$$
-      (you treat the other variable as constant when taking partial derivatives).  Therefore, the PDE becomes
-      $$X(x)^2 T(t)^2 X'(x)T(t) = X(x)T''(t).$$
-      Divide both sides by $T(t)^3$ to obtain
-      $$X(x)^2 X'(x) = \dfrac{T''(t)}{T(t)^3}.$$
-      The left side depends only on $x$, and the right side depends only on $t$.  Since $x$ and $t$ are independent (and can be adjusted independently), the only way the above could be true for all $x$ and $t$ would be if each side equals the same constant:
-     $$X(x)^2 X'(x) = \dfrac{T''(t)}{T(t)^3} = \lambda.$$
-     Rearrange to obtain the ODE system
-     $$\boxed{ \left\{ \begin{array}{rl} X'(x) &amp;= \dfrac{\lambda}{X(x)^2} \\ \\ T''(t) &amp;= \lambda T(t)^3 \end{array} \right. }.$$
+      The heat equation $u_t = ku_{xx}$ with zero temperature end conditions $u(0,t) = 0 = u(L,t)$ has solution
+      $$u(x,t) = \sum_{n=1}^\infty b_n \sin \left(\dfrac{n \pi x}{L}\right) e^{-k(n\pi/L)^2 t}.$$
+      We have $k=8, L = 2\pi,$ and this corresponds to choice $\boxed{\text{IV)}}$.
     </details>
 <h1 id="10">10<a class="anchor-link" href="#10">¶</a></h1><p>Consider the PDE with boundary conditions defined for $0 &lt; x &lt; 6$ and $t&gt;0$:
 $$ u_{xx} = u_t, \qquad u_x(0,t) = 0 = u_x(6,t).$$</p>
@@ -7749,59 +7749,65 @@ $$ u_{xx} = u_t, \qquad u_x(0,t) = 0 = u_x(6,t).$$</p>
       $$\boxed{u(x,t) = \dfrac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left(\dfrac{n \pi x}{6}\right) e^{-(n\pi/6)^2 t}}.$$
     </details>
 <h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Solve the boundary value problem subject to the initial condition
-$$u(x,0) = \left\{ \begin{array}{ll} x &amp; 0 &lt; x &lt; 3 \\ 0 &amp; 3 &lt; x &lt; 6 \end{array} \right. .$$</p>
+$u(x,0) = 3+x .$<br/>
+For full credit you must simplify any trigonometric expressions such as $\cos(n\pi)$ and $\sin(n\pi)$.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       Substitute $t=0$ into the above solution (and use $e^0 = 1$) to obtain
       $$u(x,0) = \dfrac{a_0}{2} + \sum_{n=1}^\infty a_n \cos \left( \dfrac{n \pi x}{6} \right).$$
       We recognize that $(a_0,a_n)$ must be the coefficients for the $[0,6]$ cosine series for $u(x,0)$.  Therefore,
-      $$ a_0 = \frac 2 6 \int_0^6 u(x,0) \, dx = \frac 1 3 \int_0^3 x \, dx = \frac 1 6 x^2 \Big|_0^3 = \frac 9 6 = \frac 3 2,$$
+      $$ a_0 = \frac 2 6 \int_0^6 (3+x) \, dx =  \frac 1 3\left( 3x + \frac{x^2}{2}\right) \Big|_0^6 = \frac 1 3 (36) = 12,$$
       and
-      $$a_n = \frac 2 6 \int_0^6 u(x,0) \cos\left( \dfrac{n \pi x}{6} \right) \, dx = \frac 1 3 \int_0^3 x \cos\left( \dfrac{n \pi x}{6} \right) \, dx.$$
-      We can use the integral reference sheet:
+      $$a_n = \frac 2 6 \int_0^6 (3+x) \cos\left( \dfrac{n \pi x}{6} \right) \, dx =  \int_0^6  \cos\left( \dfrac{n \pi x}{6} \right) \, dx + \frac 1 3 \int_0^6 x \cos\left(\dfrac{n \pi x}{6}\right) \, dx.$$
+      For the first term, substitute $u = \dfrac{n \pi x}{6}, du = \dfrac{n \pi}{6} \, dx$, and on the second term we can use the integral reference sheet:
       \begin{align*}
-      a_n &amp;= \frac 1 3 \left[ \dfrac{6}{n \pi} x \sin \left( \dfrac{n \pi x}{6} \right) + \left( \dfrac{6}{n \pi}\right)^2 \cos \left( \dfrac{n \pi x}{6} \right) \right] \Big|_0^3\\
-      &amp;= \frac 1 3 \left[ \dfrac{6}{n \pi} 3 \sin \left( \dfrac{n \pi}{2} \right) + \left( \dfrac{6}{n \pi}\right)^2 \cos \left( \dfrac{n \pi}{2} \right) \right]  - \frac 1 3 \left[ \dfrac{6}{n \pi} 0 \sin 0  + \left( \dfrac{6}{n \pi}\right)^2 \cos 0 \right]  \\
-      &amp;= \frac{6}{n\pi} \sin \left( \frac{n \pi}{2} \right) + \frac{12}{n^2 \pi^2} \cos \left( \dfrac{n \pi}{2} \right) - \frac{12}{n^2 \pi^2}.
+      a_n &amp;= \left\{ \dfrac{6}{n \pi} \sin\left( \dfrac{n \pi x}{6} \right) + \frac 1 3 \left[ \dfrac{6}{n \pi} x \sin \left( \dfrac{n \pi x}{6} \right) + \left( \dfrac{6}{n \pi}\right)^2 \cos \left( \dfrac{n \pi x}{6} \right) \right] \right\} \Big|_0^6
       \end{align*}
+      For $x=6$, two of the terms have $\sin(n\pi) = 0$, and for $x=0$ those same terms will have $\sin 0 = 0$ and $0 \sin 0 = 0$.  Therefore, we only have (using $\cos 0 = 1$ of course)
+     $$a_n = \frac{1}{3} \cdot \dfrac{36}{n^2 \pi^2} \cos(n\pi) - \dfrac{1}{3} \cdot \dfrac{36}{n^2 \pi^2}.$$
+     We have $\cos(n\pi) = (-1)^n$, and so
+     $$a_n = \dfrac{12}{n^2 \pi^2} [(-1)^n - 1],$$
+     and putting it together we have
       Therefore,
-      $$\boxed{u(x,t) = \dfrac{3/2}{2} + \sum_{n=1}^\infty a_n \cos \left( \dfrac{n \pi x}{6} \right) e^{-(n \pi/6)^2 t}, \qquad a_n = \frac{6}{n\pi} \sin \left( \frac{n \pi}{2} \right) + \frac{12}{n^2 \pi^2} \cos \left( \dfrac{n \pi}{2} \right) - \frac{12}{n^2 \pi^2}}.$$
+      $$\boxed{u(x,t) = \dfrac{12}{2} + \sum_{n=1}^\infty \dfrac{12}{n^2 \pi^2} [(-1)^n - 1] \cos\left(\frac{n \pi x}{6}\right) e^{-(n\pi/6)^2 t}}.$$
     </details>
-<h1 id="11">11<a class="anchor-link" href="#11">¶</a></h1><p>Consider the PDE with boundary conditions and initial conditions defined for $0&lt;x&lt;2$ and $t&gt;0$.
-$$ u_{xx} = u_{tt}, \qquad u(0,t) = 0 = u(2,t), \qquad u(x,0) = 8, u_t(x,0) = 12 \sin(\pi x) + 5 \sin(2 \pi x).$$</p>
+<h1 id="11">11<a class="anchor-link" href="#11">¶</a></h1><p>Consider the PDE with boundary conditions and initial conditions defined for $0&lt;x&lt;4$ and $t&gt;0$.
+$$ u_{xx} = u_{tt}, \qquad u(0,t) = 0 = u(4,t), \qquad u(x,0) = 17 \sin(3 \pi x) - 4 \sin(4 \pi x),\quad  u_t(x,0) = 3.$$</p>
 <h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>Write the general solution to this boundary value problem (you do not need to derive it).</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       The wave equation $u_{tt} = c^2u_{xx}$ with fixed end conditions $u(0,t) = 0 = u(L,t)$ has solution
       $$u(x,t) = \sum_{n=1}^\infty c_n \sin \left(\dfrac{n \pi x}{L}\right) \cos \left( \dfrac{n \pi c t}{L}\right) + \sum_{n=1}^\infty d_n \sin \left(\dfrac{n \pi x}{L}\right) \sin \left( \dfrac{n \pi c t}{L}\right).$$
-      Here, $c=1, L=2$ and so we have
-      $$\boxed{u(x,t) = \sum_{n=1}^\infty c_n \sin \left(\dfrac{n \pi x}{2}\right) \cos \left( \dfrac{n \pi t}{2}\right) + \sum_{n=1}^\infty d_n \sin \left(\dfrac{n \pi x}{2}\right) \sin \left( \dfrac{n \pi t}{2}\right)}.$$
+      Here, $c=1, L=4$ and so we have
+      $$\boxed{u(x,t) = \sum_{n=1}^\infty c_n \sin \left(\dfrac{n \pi x}{4}\right) \cos \left( \dfrac{n \pi t}{4}\right) + \sum_{n=1}^\infty d_n \sin \left(\dfrac{n \pi x}{4}\right) \sin \left( \dfrac{n \pi t}{4}\right)}.$$
     </details>
 <h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>Solve the PDE with given boundary conditions and initial conditions.  For full credit you must simplify any trigonometric expressions such as $\cos(n\pi)$ and $\sin(n\pi)$.</p>
 <details>
 <summary><span style="color:red">Solution</span></summary>
       Take the time partial derivative of the above solution to obtain
-      $$\frac{\partial u}{\partial t}(x,t) = \sum_{n=1}^\infty c_n \sin \left(\dfrac{n \pi x}{2}\right) \left[ - \sin \left( \dfrac{n \pi t}{2}\right) \cdot \frac{n \pi}{2}\right] + \sum_{n=1}^\infty d_n \sin \left(\dfrac{n \pi x}{2}\right) \left[ \cos \left( \dfrac{n \pi t}{2}\right) \cdot \frac{n \pi}{2} \right].$$
+      $$\frac{\partial u}{\partial t}(x,t) = \sum_{n=1}^\infty c_n \sin \left(\dfrac{n \pi x}{4}\right) \left[ - \sin \left( \dfrac{n \pi t}{4}\right) \cdot \frac{n \pi}{4}\right] + \sum_{n=1}^\infty d_n \sin \left(\dfrac{n \pi x}{4}\right) \left[ \cos \left( \dfrac{n \pi t}{4}\right) \cdot \frac{n \pi}{4} \right].$$
       Substitute $t=0$ into $u(x,t)$ and $\frac{\partial u}{\partial t}$ to obtain (and use $\cos 0 = 1, \sin 0 = 0$)
       \begin{align*}
-      u(x,0) &amp;= 8 = \sum_{n=1}^\infty c_n \sin \left( \dfrac{ n \pi x}{2}\right) , \\ \\
-      u_t(x,0) &amp;= \underbrace{12 \sin (\pi x)}_{n=2} + \underbrace{5 \sin(2 \pi x)}_{n=4} =\sum_{n=1}^\infty \left[ d_n \cdot \frac{n \pi}{2} \right] \sin \left( \dfrac{ n \pi x}{2} \right).
+      u(x,0) &amp;= \underbrace{17 \sin(3 \pi x)}_{n=12} - \underbrace{4 \sin(4 \pi x)}_{n = 16} = \sum_{n=1}^\infty c_n \sin \left( \dfrac{ n \pi x}{4}\right) , \\ \\
+      u_t(x,0) &amp;= 3=\sum_{n=1}^\infty \left[ d_n \cdot \frac{n \pi}{4} \right] \sin \left( \dfrac{ n \pi x}{4} \right).
       \end{align*}
-     The $(c_n)$ coefficients must be the $[0,2]$ sine series coefficients of $u(x,0) = 8$, so that
+     The initial condition $u(x,0)$ is already in the form of a $[0,4]$ sine series: observe that 
      \begin{align*}
-     c_n &amp;= \frac 2 2 \int_0^2 8 \sin\left( \frac{n \pi x}{2} \right) \, dx \\
-     &amp;= -8 \cdot \frac{2}{n \pi} \cos\left( \dfrac{n \pi x}{2} \right) \Big|_0^2 \\
-     &amp;= -8 \cdot \frac{2}{n\pi} \left[ \cos(n\pi) - 1\right] \\
-     &amp;= -\frac{16}{n\pi} [(-1)^n - 1].
+     c_{12} &amp;= 17 , \\ \\
+     c_{16} &amp;= -4 ,\\ \\
+     c_n &amp;= 0 \text{ for all } n \neq 12 \text{ or } 16.
      \end{align*}
-     The initial condition $u_t(x,0)$ is already in the form of a $[0,2]$ sine series: observe that 
+     The $(d_n)$ coefficients (times the chain rule factor) must be the $[0,4]$ sine series coefficients of $u(x,0) = 3$, so that
      \begin{align*}
-     d_2 \cdot \frac{2 \pi}{2} &amp;= 12 \implies d_2 = \dfrac{12}{\pi}, \\ \\
-     d_4 \cdot \frac{4 \pi}{2} &amp;= 5 \implies d_4 = \dfrac{5}{2 \pi},\\ \\
-     d_n &amp;= 0 \text{ for all } n \neq 2 \text{ or } 4.
+     d_n \cdot \frac{n \pi}{4} &amp;= \frac 2 4 \int_0^4 3 \sin\left( \frac{n \pi x}{4} \right) \, dx \\
+     &amp;= \frac 6 4 \cdot \frac{4}{n \pi} \cos\left( \dfrac{n \pi x}{4} \right) \Big|_0^4 \\
+     &amp;= \frac 3 2 \cdot \frac{4}{n\pi} \left[ \cos(n\pi) - 1\right] \\
+     &amp;= \frac 3 2 \cdot \frac{4}{n\pi} [(-1)^n - 1].
      \end{align*}
-     Putting it together,
-     $$\boxed{ u(x,t) = -\sum_{n=1}^\infty \left[\frac{16}{n\pi} [(-1)^n - 1] \sin \left(\dfrac{n \pi x}{2}\right) \cos \left( \dfrac{n \pi t}{2}\right)\right] + \dfrac{12}{\pi} \sin(\pi x) \sin(\pi t) + \dfrac{5}{2\pi} \sin(2\pi x) \sin(2 \pi t)}.$$
+     Then,
+     $$d_n = \frac 3 2 \left( \frac{4}{n\pi}\right)^2 [(-1)^n - 1] = \frac{24}{n^2 \pi^2}[(-1)^n-1],$$
+     and putting it together,
+     $$\boxed{ u(x,t) = 17 \sin \left( \dfrac{12 \pi x}{4}\right) \cos \left( \dfrac{12 \pi t}{4}\right) - 4 \sin \left( \dfrac{16 \pi x}{4}\right) \cos \left( \dfrac{16 \pi t}{4} \right) + \sum_{n=1}^\infty \frac{24}{n^2 \pi^2} [(-1)^n-1] \sin \left( \dfrac{n \pi x}{4}\right) \sin \left( \dfrac{n \pi t}{4}\right)}.$$
     </details>
 </div>
 </div>
