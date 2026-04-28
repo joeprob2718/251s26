@@ -7300,7 +7300,6 @@ MathJax = {
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
-
 <!-- End of mathjax configuration --><script type="module">
   document.addEventListener("DOMContentLoaded", async () => {
     const diagrams = document.querySelectorAll(".jp-Mermaid > pre.mermaid");
@@ -7663,7 +7662,7 @@ $$ \mathbf{x}' = \left[ \begin{matrix} 1 &amp; -2 \\ 2 &amp; 1 \end{matrix} \rig
     <b>Being careful with the minus</b>, we obtain
     $$\left[ \begin{matrix} -2i &amp; -2 \\ 2 &amp; -2i \end{matrix}\right] \left[ \begin{matrix} A \\ B \end{matrix} \right]= \left[ \begin{matrix} 0 \\ 0 \end{matrix} \right].$$
     This leads to the system of equations
-    $$ \left\{ \begin{array}{ll} -2iA  - 2B &amp;= 0 \\ 2A - 2i B &amp;= 0 \end{array} \right. .$$
+    $$ \left\{ \begin{array}{rl} -2iA  - 2B &amp;= 0 \\ 2A - 2i B &amp;= 0 \end{array} \right. .$$
     Notice the second equation is $i$ times the first, since $i^2 = -1$.  Therefore, we can work with the first equation only and find any $A,B$ such that $-2iA = 2B.$ Picking $A=1, B=-i$ leads to $\mathbf{v} = \left[ \begin{matrix} 1 \\ -i \end{matrix} \right].$<br/>
     Then,
     \begin{align*}
@@ -7694,7 +7693,34 @@ it turns out that $\left[ \begin{matrix} 0 \\ 0 \end{matrix} \right], \left[ \be
     However, we are told to just find one solution so we can take $c_1 = 0, c_2 = 1$ to obtain for example
     $$\boxed{ \mathbf{x}(t) = e^{-2t} \left[ \begin{matrix} 1 \\ 0 \end{matrix} \right]}.$$
     </details>
-<h2 id="8-will-be-covered-on-the-final-exam-for-Spring-2026">8 will be covered on the final exam for Spring 2026<a class="anchor-link" href="#8-will-be-covered-on-the-final-exam-for-Spring-2026">¶</a></h2>
+<h1 id="8-will-be-covered-on-the-final-exam-for-Spring-2026">8 will be covered on the final exam for Spring 2026<a class="anchor-link" href="#8-will-be-covered-on-the-final-exam-for-Spring-2026">¶</a></h1><p>Compute the inverse Laplace transforms given below.</p>
+<h2 id="a)">a)<a class="anchor-link" href="#a)">¶</a></h2><p>$F(s) = \dfrac 1 s + \dfrac{2}{s^2} + \dfrac{3}{s^3} + \dfrac{4}{s^4}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      We can write
+      $$F(s) = \dfrac 1 s + 2 \cdot \dfrac{1}{s^2} + \dfrac 3 2 \cdot \dfrac{2}{s^3} + \dfrac{4}{6} \cdot \dfrac{6}{s^4}.$$
+    We do this since the $n=0, 1, 2, 3$ cases of 
+    $$\mathcal{L}\{t^n\} = \dfrac{n!}{s^{n+1}}$$
+    lead to
+    $$\boxed{f(t) = 1 + 2t + \dfrac 3 2 t^2 + \dfrac 2 3 t^3},$$
+    since $0! = 1! = 1, 2! = 2, 3!=6$ and the linearity property guarantees $\mathcal{L}^{-1} \{ a G(s) + b H(s)\} = ag(t) + bh(t)$ for constants $a,b$ (also works with 4 terms).
+    </details>
+<h2 id="b)">b)<a class="anchor-link" href="#b)">¶</a></h2><p>$F(s) = \dfrac{1}{s^2-10s+21}$</p>
+<details>
+<summary><span style="color:red">Solution</span></summary>
+      The denominator factors so we do a partial fraction decomposition:
+      $$\dfrac{1}{(s-3)(s-7)} = \dfrac{A}{s-3} + \dfrac{B}{s-7}.$$
+      Multiplying the original denominator yields
+      $$0s + 1 = (s-3)(s-7)\left[ \dfrac{A}{s-3} + \dfrac{B}{s-7}\right] = A(s-7) + B(s-3) = (A+B)s + (-7A-3B).$$
+      Matching corresponding coefficients yields
+      $$\left\{ \begin{array}{rl} A + B &amp;= 0 \\ -7A-3B &amp;= 1 \end{array} \right. .$$
+      Adding three times the first equation to the second (to cancel the $B$s) yields
+      $$-4A = 1 \implies A = -\frac 1 4 \implies B = \frac 1 4.$$
+      Then,
+      $$F(s) = \dfrac{1}{s^2-10s+21} = -\dfrac{1/4}{s-3} + \dfrac{1/4}{s-7},$$
+      and the linearity property and $\mathcal{L}\{e^{at}\} = \dfrac{1}{s-a}$ table entry yield
+      $$\boxed{ -\frac 1 4 e^{3t} + \frac 1 4 e^{7t}}.$$
+    </details>
 </div>
 </div>
 </div>
