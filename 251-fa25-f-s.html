@@ -7731,12 +7731,12 @@ $$ u^2 \frac{\partial u}{\partial x} = \frac{\partial^2 u}{\partial t^2}.$$</p>
       $$\frac{\partial u}{\partial x} = X'(x) T(t), \qquad \dfrac{\partial^2 u}{\partial t^2} = X(x)T''(t)$$
       (you treat the other variable as constant when taking partial derivatives).  Therefore, the PDE becomes
       $$X(x)^2 T(t)^2 X'(x)T(t) = X(x)T''(t).$$
-      Divide both sides by $T(t)^3$ to obtain
-      $$X(x)^2 X'(x) = \dfrac{T''(t)}{T(t)^3}.$$
+      Divide both sides by $X(x)T(t)^3$ to obtain
+      $$X(x) X'(x) = \dfrac{T''(t)}{T(t)^3}.$$
       The left side depends only on $x$, and the right side depends only on $t$.  Since $x$ and $t$ are independent (and can be adjusted independently), the only way the above could be true for all $x$ and $t$ would be if each side equals the same constant:
-     $$X(x)^2 X'(x) = \dfrac{T''(t)}{T(t)^3} = \lambda.$$
+     $$X(x) X'(x) = \dfrac{T''(t)}{T(t)^3} = \lambda.$$
      Rearrange to obtain the ODE system
-     $$\boxed{ \left\{ \begin{array}{rl} X'(x) &amp;= \dfrac{\lambda}{X(x)^2} \\ \\ T''(t) &amp;= \lambda T(t)^3 \end{array} \right. }.$$
+     $$\boxed{ \left\{ \begin{array}{rl} X'(x) &amp;= \dfrac{\lambda}{X(x)} \\ \\ T''(t) &amp;= \lambda T(t)^3 \end{array} \right. }.$$
     </details>
 <h1 id="10">10<a class="anchor-link" href="#10">¶</a></h1><p>Consider the PDE with boundary conditions defined for $0 &lt; x &lt; 6$ and $t&gt;0$:
 $$ u_{xx} = u_t, \qquad u_x(0,t) = 0 = u_x(6,t).$$</p>
