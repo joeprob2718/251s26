@@ -7800,14 +7800,14 @@ $$ u_{xx} = u_{tt}, \qquad u(0,t) = 0 = u(4,t), \qquad u(x,0) = 17 \sin(3 \pi x)
      The $(d_n)$ coefficients (times the chain rule factor) must be the $[0,4]$ sine series coefficients of $u(x,0) = 3$, so that
      \begin{align*}
      d_n \cdot \frac{n \pi}{4} &amp;= \frac 2 4 \int_0^4 3 \sin\left( \frac{n \pi x}{4} \right) \, dx \\
-     &amp;= \frac 6 4 \cdot \frac{4}{n \pi} \cos\left( \dfrac{n \pi x}{4} \right) \Big|_0^4 \\
-     &amp;= \frac 3 2 \cdot \frac{4}{n\pi} \left[ \cos(n\pi) - 1\right] \\
-     &amp;= \frac 3 2 \cdot \frac{4}{n\pi} [(-1)^n - 1].
+     &amp;= -\frac 6 4 \cdot \frac{4}{n \pi} \cos\left( \dfrac{n \pi x}{4} \right) \Big|_0^4 \\
+     &amp;= -\frac 3 2 \cdot \frac{4}{n\pi} \left[ \cos(n\pi) - 1\right] \\
+     &amp;= -\frac 3 2 \cdot \frac{4}{n\pi} [(-1)^n - 1].
      \end{align*}
      Then,
-     $$d_n = \frac 3 2 \left( \frac{4}{n\pi}\right)^2 [(-1)^n - 1] = \frac{24}{n^2 \pi^2}[(-1)^n-1],$$
+     $$d_n = -\frac 3 2 \left( \frac{4}{n\pi}\right)^2 [(-1)^n - 1] = \frac{24}{n^2 \pi^2}[1-(-1)^n],$$
      and putting it together,
-     $$\boxed{ u(x,t) = 17 \sin \left( \dfrac{12 \pi x}{4}\right) \cos \left( \dfrac{12 \pi t}{4}\right) - 4 \sin \left( \dfrac{16 \pi x}{4}\right) \cos \left( \dfrac{16 \pi t}{4} \right) + \sum_{n=1}^\infty \frac{24}{n^2 \pi^2} [(-1)^n-1] \sin \left( \dfrac{n \pi x}{4}\right) \sin \left( \dfrac{n \pi t}{4}\right)}.$$
+     $$\boxed{ u(x,t) = 17 \sin \left( \dfrac{12 \pi x}{4}\right) \cos \left( \dfrac{12 \pi t}{4}\right) - 4 \sin \left( \dfrac{16 \pi x}{4}\right) \cos \left( \dfrac{16 \pi t}{4} \right) + \sum_{n=1}^\infty \frac{24}{n^2 \pi^2} [1-(-1)^n] \sin \left( \dfrac{n \pi x}{4}\right) \sin \left( \dfrac{n \pi t}{4}\right)}.$$
     </details>
 </div>
 </div>
